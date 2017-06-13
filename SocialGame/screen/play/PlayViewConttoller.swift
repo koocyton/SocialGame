@@ -8,9 +8,7 @@
 
 import UIKit
 
-let channelContentHeight : CGFloat = 100
-
-let cellHeight : CGFloat = 100
+let cellHeight : CGFloat = 200
 
 class PlayViewController: UIViewController {
     
@@ -31,7 +29,7 @@ class PlayViewController: UIViewController {
         // 大小
         playScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         // 滑动区的内容区的大小
-        playScrollView.contentSize = CGSize(width: centerViewWidth , height:centerViewHeight * 2)
+        // playScrollView.contentSize = CGSize(width: centerViewWidth , height:centerViewHeight * 2)
         // 背景色
         // self.backgroundColor = UIColor.darkGray
         // 是否按页滚动
@@ -43,27 +41,19 @@ class PlayViewController: UIViewController {
         // self.showsVerticalScrollIndicator = false
         self.view.addSubview(playScrollView)
         
-        // 滚屏内插入游戏内容
+        // 设定每个 cell
         let collectionViewLayout = UICollectionViewFlowLayout()
         // 滚动方向
         collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         //设置所有cell的size
-        collectionViewLayout.itemSize = CGSize(width:screenWidth, height: 100 )
+        collectionViewLayout.itemSize = CGSize(width:screenWidth, height: cellHeight)
         //上下间隔
         collectionViewLayout.minimumLineSpacing = 0
         //左右间隔
         collectionViewLayout.minimumInteritemSpacing = 0
+
         // 初始化
         let gamesView = GamesView.init(frame: playScrollView.layer.bounds, layout: collectionViewLayout)
-
-        // 大小, 坐标
-        //gamesView.frame = CGRect(x: CGFloat(ii) * screenWidth, y: 0, width: screenWidth, height: channelContentHeight)
-        //gamesView.contentSize = CGSize(width: screenWidth , height:channelContentHeight-200)
-        // oneChannelView.scrollRectToVisible(<#T##rect: CGRect##CGRect#>, animated: <#T##Bool#>)
-        //oneChannelView.delegate = oneChannelView
-        //oneChannelView.dataSource = oneChannelView
-        // oneChannelView.cellData = channel
-        // gamesView.tag = 100 + ii
         // 添加到界面
         playScrollView.addSubview(gamesView)
     }

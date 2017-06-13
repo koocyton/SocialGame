@@ -37,25 +37,25 @@ class ViewController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        // UI Play VIEW
-        let playView = UINavigationController(rootViewController: PlayViewController())
-        playView.tabBarItem.title = "Play";
-        self.addChildViewController(playView)
+        // UI Play VIEW Controller
+        let playViewController = UINavigationController(rootViewController: PlayViewController())
+        playViewController.tabBarItem.title = "Play";
+        self.addChildViewController(playViewController)
 
-        // UI Friend VIEW
-        let friendView = UINavigationController(rootViewController: FriendViewController())
-        friendView.tabBarItem.title = "Friend";
-        self.addChildViewController(friendView)
+        // UI Friend VIEW Controller
+        let friendViewController = UINavigationController(rootViewController: FriendViewController())
+        friendViewController.tabBarItem.title = "Friend";
+        self.addChildViewController(friendViewController)
 
-        // UI Message VIEW
-        let messageView = UINavigationController(rootViewController: MessageViewController())
-        messageView.tabBarItem.title = "Message";
-        self.addChildViewController(messageView)
+        // UI Message VIEW Controller
+        let messageViewController = UINavigationController(rootViewController: MessageViewController())
+        messageViewController.tabBarItem.title = "Message";
+        self.addChildViewController(messageViewController)
 
-        // UI Mine VIEW
-        let mineView = UINavigationController(rootViewController: MineViewController())
-        mineView.tabBarItem.title = "Mine";
-        self.addChildViewController(mineView)
+        // UI Mine VIEW Controller
+        let mineViewController = UINavigationController(rootViewController: MineViewController())
+        mineViewController.tabBarItem.title = "Mine";
+        self.addChildViewController(mineViewController)
     }
 
     override func didReceiveMemoryWarning() {
