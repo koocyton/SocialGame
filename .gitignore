@@ -1,0 +1,28 @@
+# phpstorm project files
+.idea
+.tags
+.tags_sorted_by_file
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# Sublime
+dump.rdb
+
+# arc
+.arclint
+.arcconfig
