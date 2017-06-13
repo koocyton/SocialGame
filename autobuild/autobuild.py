@@ -20,10 +20,10 @@ EXPORT_MAIN_DIRECTORY = "~/Desktop/"
 # configuration for pgyer
 PGYER_UPLOAD_URL = "http://www.pgyer.com/apiv1/app/upload"
 DOWNLOAD_BASE_URL = "http://www.pgyer.com"
-USER_KEY = "******"
-API_KEY = "******"
+USER_KEY = "5987501d2d77515bf3554e4cd1a475fc"
+API_KEY = "96f7a98394ca343c1a69b77b9d5e39f8"
 #设置从蒲公英下载应用时的密码
-PYGER_PASSWORD = "******" 
+PYGER_PASSWORD = "119110" 
 
 def cleanArchiveFile(archiveFile):
 	cleanCmd = "rm -r %s" %(archiveFile)
