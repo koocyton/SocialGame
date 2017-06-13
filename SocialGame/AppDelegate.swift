@@ -17,31 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
-        
-        let tabbarController = UITabBarController()
-        self.window?.rootViewController = tabbarController
-        
-        let pv = UINavigationController(rootViewController: PlayViewController())
-        pv.tabBarItem.title = "Play";
-        tabbarController.addChildViewController(pv)
-        
-        let fv = UINavigationController(rootViewController: FriendViewController())
-        fv.tabBarItem.title = "Friend";
-        tabbarController.addChildViewController(fv)
-        
-        let mv = UINavigationController(rootViewController: MessageViewController())
-        mv.tabBarItem.title = "Message";
-        tabbarController.addChildViewController(mv)
 
-        let iv = UINavigationController(rootViewController: MineViewController())
-        iv.tabBarItem.title = "Mine";
-        tabbarController.addChildViewController(iv)
-        
+        // set status bar
+        UIApplication.shared.statusBarStyle = .lightContent
+
+        // set background
+        // self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
+
         self.window?.makeKeyAndVisible()
 
         return true

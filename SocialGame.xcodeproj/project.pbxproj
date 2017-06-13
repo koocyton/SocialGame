@@ -17,7 +17,7 @@
 		BA2772E91EEFBC8E00ABF5B2 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E11EEFBC8E00ABF5B2 /* FriendViewController.swift */; };
 		BA2772EA1EEFBC8E00ABF5B2 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E31EEFBC8E00ABF5B2 /* MessageViewController.swift */; };
 		BA2772EB1EEFBC8E00ABF5B2 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E51EEFBC8E00ABF5B2 /* MineViewController.swift */; };
-		BA2772EC1EEFBC8E00ABF5B2 /* GamesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E71EEFBC8E00ABF5B2 /* GamesCellView.swift */; };
+		BA2772EC1EEFBC8E00ABF5B2 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E71EEFBC8E00ABF5B2 /* GamesView.swift */; };
 		BA2772ED1EEFBC8E00ABF5B2 /* PlayViewConttoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772E81EEFBC8E00ABF5B2 /* PlayViewConttoller.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		BA2772E11EEFBC8E00ABF5B2 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		BA2772E31EEFBC8E00ABF5B2 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		BA2772E51EEFBC8E00ABF5B2 /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		BA2772E71EEFBC8E00ABF5B2 /* GamesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCellView.swift; sourceTree = "<group>"; };
+		BA2772E71EEFBC8E00ABF5B2 /* GamesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		BA2772E81EEFBC8E00ABF5B2 /* PlayViewConttoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewConttoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 		BA2772E61EEFBC8E00ABF5B2 /* play */ = {
 			isa = PBXGroup;
 			children = (
-				BA2772E71EEFBC8E00ABF5B2 /* GamesCellView.swift */,
+				BA2772E71EEFBC8E00ABF5B2 /* GamesView.swift */,
 				BA2772E81EEFBC8E00ABF5B2 /* PlayViewConttoller.swift */,
 			);
 			path = play;
@@ -203,7 +203,7 @@
 				BA2772C71EEFB8EB00ABF5B2 /* ViewController.swift in Sources */,
 				BA2772ED1EEFBC8E00ABF5B2 /* PlayViewConttoller.swift in Sources */,
 				BA2772CD1EEFB8EB00ABF5B2 /* SocialGame.xcdatamodeld in Sources */,
-				BA2772EC1EEFBC8E00ABF5B2 /* GamesCellView.swift in Sources */,
+				BA2772EC1EEFBC8E00ABF5B2 /* GamesView.swift in Sources */,
 				BA2772C51EEFB8EB00ABF5B2 /* AppDelegate.swift in Sources */,
 				BA2772EA1EEFBC8E00ABF5B2 /* MessageViewController.swift in Sources */,
 				BA2772EB1EEFBC8E00ABF5B2 /* MineViewController.swift in Sources */,
@@ -370,6 +370,7 @@
 				BA2772D81EEFB8EB00ABF5B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
