@@ -26,3 +26,6 @@ dump.rdb
 # arc
 .arclint
 .arcconfig
+
+# pgy autobuild
+/autobuild
