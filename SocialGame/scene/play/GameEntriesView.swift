@@ -2,14 +2,14 @@
 import UIKit
 
 
-class GamesView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    let friendView : FriendViewController
-    
+class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    let deceitGameView : DeceitGameView
+
     init(frame: CGRect, layout: UICollectionViewLayout) {
-        
-        self.friendView = FriendViewController()
-        
+
+        self.deceitGameView = DeceitGameView()
+
         super.init(frame: frame, collectionViewLayout: layout)
         
         // self.init(frame: self.layer.bounds, collectionViewLayout: layout)
@@ -21,7 +21,7 @@ class GamesView: UICollectionView, UICollectionViewDataSource, UICollectionViewD
         //注册一个cell
         self.register(GameCell.self, forCellWithReuseIdentifier:"GameCell")
     }
-    
+
     func findController() -> UIViewController! {
         return self.findControllerWithClass(UIViewController.self)
     }
@@ -51,7 +51,9 @@ class GamesView: UICollectionView, UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
         //channelAudioView.play()
-        self.findNavigator()?.pushViewController(self.friendView, animated: true)
+        // self.findController().hidesBottomBarWhenPushed = true
+        self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
+        // self.findController().hidesBottomBarWhenPushed = false
     }
     
     // 每个 cell 的处理

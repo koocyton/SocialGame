@@ -10,7 +10,7 @@ import UIKit
 
 let cellHeight : CGFloat = 200
 
-class PlayViewController: UIViewController {
+class PlaySceneController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,7 @@ class PlayViewController: UIViewController {
 
         self.navigationItem.title = "Games"
         self.view.backgroundColor = UIColor.white
+        self.tabBarController?.tabBar.isHidden = false;
         
         self.addPlaySubView()
     }
@@ -53,9 +54,9 @@ class PlayViewController: UIViewController {
         collectionViewLayout.minimumInteritemSpacing = 0
 
         // 初始化
-        let gamesView = GamesView.init(frame: playScrollView.layer.bounds, layout: collectionViewLayout)
+        let gameListView = GameListView.init(frame: playScrollView.layer.bounds, layout: collectionViewLayout)
         // 添加到界面
-        playScrollView.addSubview(gamesView)
+        playScrollView.addSubview(gameListView)
     }
 
     override func didReceiveMemoryWarning() {

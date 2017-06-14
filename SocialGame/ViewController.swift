@@ -38,24 +38,24 @@ class ViewController: UITabBarController {
         // Do any additional setup after loading the view, typically from a nib.
 
         // UI Play VIEW Controller
-        let playViewController = UINavigationController(rootViewController: PlayViewController())
-        playViewController.tabBarItem.title = "Play";
-        self.addChildViewController(playViewController)
+        let playScene = UINavigationController(rootViewController: PlaySceneController())
+        playScene.tabBarItem.title = "Play";
+        self.addChildViewController(playScene)
 
         // UI Friend VIEW Controller
-        let friendViewController = UINavigationController(rootViewController: FriendViewController())
-        friendViewController.tabBarItem.title = "Friend";
-        self.addChildViewController(friendViewController)
+        let friendScene = UINavigationController(rootViewController: FriendSceneController())
+        friendScene.tabBarItem.title = "Friend";
+        self.addChildViewController(friendScene)
 
         // UI Message VIEW Controller
-        let messageViewController = UINavigationController(rootViewController: MessageViewController())
-        messageViewController.tabBarItem.title = "Message";
-        self.addChildViewController(messageViewController)
+        let messageScene = UINavigationController(rootViewController: MessageSceneController())
+        messageScene.tabBarItem.title = "Message";
+        self.addChildViewController(messageScene)
 
         // UI Mine VIEW Controller
-        let mineViewController = UINavigationController(rootViewController: MineViewController())
-        mineViewController.tabBarItem.title = "Mine";
-        self.addChildViewController(mineViewController)
+        let mineScene = UINavigationController(rootViewController: MineSceneController())
+        mineScene.tabBarItem.title = "Mine";
+        self.addChildViewController(mineScene)
     }
 
     override func didReceiveMemoryWarning() {

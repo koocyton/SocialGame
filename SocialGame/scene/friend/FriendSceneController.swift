@@ -1,5 +1,5 @@
 //
-//  MineViewController.swift
+//  FriendViewController.swift
 //  WereWolf
 //
 //  Created by 刘毅 on 2017/6/1.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MineViewController: UIViewController {
+class FriendSceneController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "Mine"
+        self.navigationItem.title = "Friend"
         self.view.backgroundColor = UIColor.white;
         
     }
