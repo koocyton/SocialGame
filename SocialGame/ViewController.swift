@@ -48,11 +48,11 @@ class ViewController: UITabBarController {
         self.addChildViewController(playScene)
 
         // UI Friend VIEW Controller
-        let friendScene = UINavigationController(rootViewController: FriendSceneController())
-        friendScene.tabBarItem.title = "Friends";
-        friendScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
-        friendScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
-        self.addChildViewController(friendScene)
+        let friendsScene = UINavigationController(rootViewController: FriendsSceneController())
+        friendsScene.tabBarItem.title = "Friends";
+        friendsScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
+        friendsScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
+        self.addChildViewController(friendsScene)
 
         // UI Message VIEW Controller
         let messageScene = UINavigationController(rootViewController: MessageSceneController())

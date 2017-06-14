@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FriendListView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+class FriendsScene: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let friendDetailView : FriendDetailView
+    let friendDetailScreen : FriendDetailScreen = FriendDetailScreen()
     
     init(frame: CGRect, layout: UICollectionViewLayout) {
         
-        self.friendDetailView = FriendDetailView()
+        // self.friendDetailScreen = FriendDetailScreen()
         
         super.init(frame: frame, collectionViewLayout: layout)
         
@@ -50,7 +50,7 @@ class FriendListView: UICollectionView, UICollectionViewDataSource, UICollection
     
     // 有多少个 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 35
     }
     
     // 点击 cell 的时候
@@ -59,8 +59,8 @@ class FriendListView: UICollectionView, UICollectionViewDataSource, UICollection
         //channelAudioView.play()
         // self.findController().hidesBottomBarWhenPushed = true
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
-        self.friendDetailView.name = cell.name.text!
-        self.findNavigator()?.pushViewController(self.friendDetailView, animated: true)
+        self.friendDetailScreen.name = cell.name.text!
+        self.findNavigator()?.pushViewController(self.friendDetailScreen, animated: true)
         // self.findController().hidesBottomBarWhenPushed = false
     }
     

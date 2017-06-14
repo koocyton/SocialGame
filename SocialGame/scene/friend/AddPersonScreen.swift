@@ -1,5 +1,5 @@
 //
-//  DeceitGameView.swift
+//  addPerson.swift
 //  SocialGame
 //
 //  Created by 刘毅 on 2017/6/14.
@@ -8,19 +8,17 @@
 
 import UIKit
 
-class FriendDetailView: UIViewController {
-    
-    var name : String = ""
+class AddPersonScreen: UIViewController {
 
+    var name : String = ""
+    
     var key  : Int   = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = name
-        // self.tabBarController?.tabBar.isHidden = true;
-        // self.findController().hidesBottomBarWhenPushed = false
+        self.navigationItem.title = "Add Person"
         self.view.backgroundColor = UIColor.white;
     }
     

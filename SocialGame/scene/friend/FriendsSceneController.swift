@@ -8,9 +8,14 @@
 
 import UIKit
 
-class FriendSceneController: UIViewController {
+class FriendsSceneController: UIViewController {
+
+    let addPersonScreen : AddPersonScreen = AddPersonScreen()
     
     override func viewDidLoad() {
+        
+        // self.addPersonScreen = AddPersonScreen()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -20,15 +25,17 @@ class FriendSceneController: UIViewController {
         let leftButtonImage = UIImage.ionicon(with: .addPerson, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
         
         let btn = UIButton()
-        btn.setImage(leftButtonImage, for: UIControlState.normal)
-        // btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-        // btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        btn.setImage(leftButtonImage, for: .normal)
         btn.sizeToFit()
-        
+        btn.addTarget(self, action:#selector(self.pushAddPersonScreen), for:.touchUpInside)
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
         
         self.addFriendSubView()
-        
+    }
+    
+    func pushAddPersonScreen() {
+        self.navigationController?.pushViewController(self.addPersonScreen, animated: true)
     }
     
     func addFriendSubView() {
@@ -52,9 +59,9 @@ class FriendSceneController: UIViewController {
         collectionLayout.minimumInteritemSpacing = 0
         
         // 初始化
-        let friendListView = FriendListView.init(frame:friendScrollView.layer.bounds, layout:collectionLayout)
+        let friendsScene = FriendsScene.init(frame:friendScrollView.layer.bounds, layout:collectionLayout)
         // 添加到界面
-        friendScrollView.addSubview(friendListView)
+        friendScrollView.addSubview(friendsScene)
     }
     
     override func didReceiveMemoryWarning() {
