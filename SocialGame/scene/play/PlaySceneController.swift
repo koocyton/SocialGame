@@ -43,18 +43,18 @@ class PlaySceneController: UIViewController {
         self.view.addSubview(playScrollView)
         
         // 设定每个 cell
-        let collectionViewLayout = UICollectionViewFlowLayout()
+        let collectionLayout = UICollectionViewFlowLayout()
         // 滚动方向
-        collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.vertical
+        collectionLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         //设置所有cell的size
-        collectionViewLayout.itemSize = CGSize(width:screenWidth, height: cellHeight)
+        collectionLayout.itemSize = CGSize(width:screenWidth, height: cellHeight)
         //上下间隔
-        collectionViewLayout.minimumLineSpacing = 0
+        collectionLayout.minimumLineSpacing = 0
         //左右间隔
-        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionLayout.minimumInteritemSpacing = 0
 
         // 初始化
-        let gameListView = GameListView.init(frame: playScrollView.layer.bounds, layout: collectionViewLayout)
+        let gameListView = GameListView.init(frame: playScrollView.layer.bounds, layout: collectionLayout)
         // 添加到界面
         playScrollView.addSubview(gameListView)
     }

@@ -20,6 +20,11 @@
 		BA6C09E01EF0D98C0029B2E6 /* DeceitGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09DA1EF0D98C0029B2E6 /* DeceitGameView.swift */; };
 		BA6C09E11EF0D98C0029B2E6 /* GameEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09DB1EF0D98C0029B2E6 /* GameEntriesView.swift */; };
 		BA6C09E21EF0D98C0029B2E6 /* PlaySceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09DC1EF0D98C0029B2E6 /* PlaySceneController.swift */; };
+		BA6C09E41EF107AF0029B2E6 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09E31EF107AF0029B2E6 /* FriendListView.swift */; };
+		BA6C09E61EF107F50029B2E6 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09E51EF107F50029B2E6 /* FriendDetailView.swift */; };
+		BA6C09EE1EF113F50029B2E6 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA6C09ED1EF113F50029B2E6 /* ionicons.ttf */; };
+		BA6C09F01EF114100029B2E6 /* IonIconHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09EF1EF114100029B2E6 /* IonIconHelper.swift */; };
+		BA6C09F21EF114550029B2E6 /* Ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09F11EF114550029B2E6 /* Ionicons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		BA6C09DA1EF0D98C0029B2E6 /* DeceitGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeceitGameView.swift; sourceTree = "<group>"; };
 		BA6C09DB1EF0D98C0029B2E6 /* GameEntriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntriesView.swift; sourceTree = "<group>"; };
 		BA6C09DC1EF0D98C0029B2E6 /* PlaySceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySceneController.swift; sourceTree = "<group>"; };
+		BA6C09E31EF107AF0029B2E6 /* FriendListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		BA6C09E51EF107F50029B2E6 /* FriendDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
+		BA6C09ED1EF113F50029B2E6 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		BA6C09EF1EF114100029B2E6 /* IonIconHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IonIconHelper.swift; sourceTree = "<group>"; };
+		BA6C09F11EF114550029B2E6 /* Ionicons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ionicons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		BA2772C31EEFB8EB00ABF5B2 /* SocialGame */ = {
 			isa = PBXGroup;
 			children = (
+				BA6C09EB1EF113F50029B2E6 /* helper */,
 				BA6C09D21EF0D98C0029B2E6 /* scene */,
 				BA2772DB1EEFBB1D00ABF5B2 /* resource */,
 				BA2772C41EEFB8EB00ABF5B2 /* AppDelegate.swift */,
@@ -98,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				BA6C09D41EF0D98C0029B2E6 /* FriendSceneController.swift */,
+				BA6C09E31EF107AF0029B2E6 /* FriendListView.swift */,
+				BA6C09E51EF107F50029B2E6 /* FriendDetailView.swift */,
 			);
 			path = friend;
 			sourceTree = "<group>";
@@ -126,6 +139,24 @@
 				BA6C09DC1EF0D98C0029B2E6 /* PlaySceneController.swift */,
 			);
 			path = play;
+			sourceTree = "<group>";
+		};
+		BA6C09EB1EF113F50029B2E6 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				BA6C09EC1EF113F50029B2E6 /* ionicons */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		BA6C09EC1EF113F50029B2E6 /* ionicons */ = {
+			isa = PBXGroup;
+			children = (
+				BA6C09ED1EF113F50029B2E6 /* ionicons.ttf */,
+				BA6C09EF1EF114100029B2E6 /* IonIconHelper.swift */,
+				BA6C09F11EF114550029B2E6 /* Ionicons.swift */,
+			);
+			path = ionicons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2772DC1EEFBB1D00ABF5B2 /* resource in Resources */,
+				BA6C09EE1EF113F50029B2E6 /* ionicons.ttf in Resources */,
 				BA2772D21EEFB8EB00ABF5B2 /* LaunchScreen.storyboard in Resources */,
 				BA2772CF1EEFB8EB00ABF5B2 /* Assets.xcassets in Resources */,
 				BA2772CA1EEFB8EB00ABF5B2 /* Main.storyboard in Resources */,
@@ -203,10 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6C09DD1EF0D98C0029B2E6 /* FriendSceneController.swift in Sources */,
+				BA6C09F01EF114100029B2E6 /* IonIconHelper.swift in Sources */,
 				BA2772C71EEFB8EB00ABF5B2 /* ViewController.swift in Sources */,
+				BA6C09F21EF114550029B2E6 /* Ionicons.swift in Sources */,
 				BA6C09E01EF0D98C0029B2E6 /* DeceitGameView.swift in Sources */,
 				BA2772CD1EEFB8EB00ABF5B2 /* SocialGame.xcdatamodeld in Sources */,
+				BA6C09E41EF107AF0029B2E6 /* FriendListView.swift in Sources */,
 				BA2772C51EEFB8EB00ABF5B2 /* AppDelegate.swift in Sources */,
+				BA6C09E61EF107F50029B2E6 /* FriendDetailView.swift in Sources */,
 				BA6C09DE1EF0D98C0029B2E6 /* MessageSceneController.swift in Sources */,
 				BA6C09E11EF0D98C0029B2E6 /* GameEntriesView.swift in Sources */,
 				BA6C09DF1EF0D98C0029B2E6 /* MineSceneController.swift in Sources */,
