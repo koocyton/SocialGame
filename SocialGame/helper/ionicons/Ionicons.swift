@@ -21,4 +21,6 @@ public enum Ionicons: String {
     case selected_mine = "\u{f3e4}"
     
     case addPerson = "\u{f211}"
+    
+    case person = "\u{f47e}"
 }

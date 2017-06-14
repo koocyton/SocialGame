@@ -58,6 +58,8 @@ class FriendListView: UICollectionView, UICollectionViewDataSource, UICollection
         //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
         //channelAudioView.play()
         // self.findController().hidesBottomBarWhenPushed = true
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
+        self.friendDetailView.name = cell.name.text!
         self.findNavigator()?.pushViewController(self.friendDetailView, animated: true)
         // self.findController().hidesBottomBarWhenPushed = false
     }
@@ -92,17 +94,17 @@ class FriendCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let imageHeight = cellHeight - 20
+        let imageHeight = 40
         
         // 封面图
         cover = UIImageView.init(frame: self.layer.bounds)
-        cover.frame = CGRect(x: 10, y: 10, width: imageHeight, height: imageHeight)
-        cover.image = UIImage(named: "resource/image/chrome")
+        cover.frame = CGRect(x: 5, y: 5, width: imageHeight, height: imageHeight)
+        cover.image = UIImage.ionicon(with: .person, textColor: UIColor.gray, size: CGSize(width: imageHeight, height: imageHeight))
         self.addSubview(cover)
         
         // 好友名字
-        name.frame = CGRect(x: imageHeight + 20 + 10, y: 10, width: screenWidth - imageHeight - 30, height: 20)
-        name.text = "标题"
+        name.frame = CGRect(x: imageHeight, y: 15, width: 100, height: 20)
+        name.text = "刘德华"
         name.textAlignment = NSTextAlignment.center
         name.textColor = UIColor.lightGray
         self.addSubview(name)

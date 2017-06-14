@@ -14,7 +14,7 @@ class FriendSceneController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "Friend"
+        self.navigationItem.title = "Friends"
         self.view.backgroundColor = UIColor.white
 
         let leftButtonImage = UIImage.ionicon(with: .addPerson, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
