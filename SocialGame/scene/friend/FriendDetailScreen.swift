@@ -21,7 +21,19 @@ class FriendDetailScreen: UIViewController {
         self.navigationItem.title = name
         // self.tabBarController?.tabBar.isHidden = true;
         // self.findController().hidesBottomBarWhenPushed = false
+        
+        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
+        let goBackBtn = UIButton()
+        goBackBtn.setImage(goBackImage, for: .normal)
+        goBackBtn.sizeToFit()
+        goBackBtn.addTarget(self, action:#selector(self.goBack), for:.touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: goBackBtn)
+
         self.view.backgroundColor = UIColor.white;
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

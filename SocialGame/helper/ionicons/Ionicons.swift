@@ -20,7 +20,9 @@ public enum Ionicons: String {
     case mine = "\u{f3e3}"
     case selected_mine = "\u{f3e4}"
     
-    case addPerson = "\u{f211}"
+    case add_person = "\u{f211}"
     
     case person = "\u{f47e}"
+    
+    case go_back = "\u{f3cf}"
 }

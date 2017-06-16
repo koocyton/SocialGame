@@ -22,13 +22,11 @@ class FriendsSceneController: UIViewController {
         self.navigationItem.title = "Friends"
         self.view.backgroundColor = UIColor.white
 
-        let leftButtonImage = UIImage.ionicon(with: .addPerson, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
-        
+        let rightButtonImage = UIImage.ionicon(with: .add_person, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
         let btn = UIButton()
-        btn.setImage(leftButtonImage, for: .normal)
+        btn.setImage(rightButtonImage, for: .normal)
         btn.sizeToFit()
         btn.addTarget(self, action:#selector(self.pushAddPersonScreen), for:.touchUpInside)
-
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
         
         self.addFriendSubView()
