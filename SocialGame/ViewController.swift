@@ -36,9 +36,9 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         self.tabBar.tintColor = UIColor.darkGray
-        // self.tabBar.backgroundColor = UIColor.darkGray
+        self.tabBar.backgroundColor = UIColor.darkGray
 
         // UI Play VIEW Controller
         let playScene = UINavigationController(rootViewController: PlaySceneController())

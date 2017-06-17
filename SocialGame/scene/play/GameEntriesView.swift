@@ -52,8 +52,9 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
         //channelAudioView.play()
         // self.findController().hidesBottomBarWhenPushed = true
-        self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
-        self.findController()?.tabBarController?.tabBar.isHidden = true;
+        self.findNavigator()?.present(self.deceitGameView, animated: true)
+        // self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
+        // self.findController()?.tabBarController?.tabBar.isHidden = true;
         // self.findController().hidesBottomBarWhenPushed = false
     }
     
