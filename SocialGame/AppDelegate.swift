@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // set background
         // self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
+        // self.window?.backgroundColor = UIColor.white
 
         self.window?.makeKeyAndVisible()
 

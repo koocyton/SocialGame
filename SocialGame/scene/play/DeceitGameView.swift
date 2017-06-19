@@ -10,6 +10,8 @@ import UIKit
 
 class DeceitGameView: UIViewController {
     
+    let gameScreen = UIView();
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,38 +19,32 @@ class DeceitGameView: UIViewController {
         self.navigationItem.title = "Deceit Game"
         
         // override var preferredStatusBarStyle: UIStatusBarStyle
-        // UIApplication.shared.statusBarStyle = .lightContent
-        
-        // self.tabBarController?.tabBar.isHidden = true;
-        // self.findController().hidesBottomBarWhenPushed = false
+        // UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
 
-        self.view.frame = CGRect(x: 0, y: 40, width: screenWidth, height: 20)
-        self.view.layer.cornerRadius = 10.0
-        
-        // self.findNavigator().sta preferredStatusBarStyle = .default
-        
-        /*
-        let maskPath = UIBezierPath(roundedRect: self.view.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii:CGSize(width:10, height:10))
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = self.view.frame
-        rectShape.position = self.view.center
-        rectShape.path = maskPath as! CGPath
-        */
-        
-        // self.view.layer.backgroundColor = UIColor.green as? CGColor
-        //Here I'm masking the textView's layer with rectShape layer
-        
-        
-        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
+        self.addGameScreen()
+        // self.view.backgroundColor = UIColor.black;
+    }
+    
+    func addGameScreen() {
+        // let gameScreen = UIView();
+        self.gameScreen.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+        self.gameScreen.layer.cornerRadius = 10.0
+        self.gameScreen.backgroundColor = UIColor.white
+
+        let goBackImage = UIImage.ionicon(with: .drag, textColor: UIColor.darkGray, size: CGSize(width: 60, height: 20))
         let goBackBtn = UIButton()
-        goBackBtn.frame = CGRect(x: 20, y: 20, width: 30, height: 30)
+        goBackBtn.frame = CGRect(x: screenWidth/2-30, y: 0, width: 30, height: 20)
         goBackBtn.setImage(goBackImage, for: .normal)
         goBackBtn.sizeToFit()
         goBackBtn.addTarget(self, action:#selector(self.goBack), for:.touchUpInside)
-        self.view.addSubview(goBackBtn)
-        // self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: goBackBtn)
-
-        self.view.backgroundColor = UIColor.black;
+        self.gameScreen.addSubview(goBackBtn)
+        
+        self.view.addSubview(self.gameScreen)
+    }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+        // return UIStatusBarStyle.Default
     }
 
     func findController() -> UIViewController! {

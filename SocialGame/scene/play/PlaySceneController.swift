@@ -18,7 +18,7 @@ class PlaySceneController: UIViewController {
 
         self.navigationItem.title = "Play"
         self.view.backgroundColor = UIColor.white
-        self.tabBarController?.tabBar.isHidden = false;
+        // self.tabBarController?.tabBar.isHidden = false;
         
         self.addPlaySubView()
     }

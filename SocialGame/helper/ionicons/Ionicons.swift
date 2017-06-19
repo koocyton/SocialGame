@@ -25,4 +25,6 @@ public enum Ionicons: String {
     case person = "\u{f47e}"
     
     case go_back = "\u{f3cf}"
+    
+    case drag = "\u{f421}"
 }
