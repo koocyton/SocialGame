@@ -12,7 +12,7 @@ class DeceitGameView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.frame = frame
+        self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
         self.layer.cornerRadius = 10.0
         self.backgroundColor = UIColor.white
         self.alpha = 1
@@ -118,6 +118,28 @@ class DeceitGameView: UIView {
      }
      */
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let center = self.center
+        if (center.y>screenHeight/2+screenHeight/4) {
+            self.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
+            // self.findNavigator().navigationController?.navigationBar.barStyle = .default
+            //self.findNavigator().isNavigationBarHidden = false
+            //self.findNavigator().tabBarController?.tabBar.isHidden = false
+            //self.findNavigator().setNavigationBarHidden(false, animated: true)
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
+        else {
+            self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+            // self.findNavigator().navigationController?.navigationBar.barStyle = .black
+            //self.findNavigator().isNavigationBarHidden = true
+            //self.findNavigator().navigationController?.view.backgroundColor = UIColor.red
+            //self.findNavigator().tabBarController?.tabBar.isHidden = true
+            // self.findNavigator().navigationController?.view.accessibilityNavigationStyle = .lightContent
+            //self.findNavigator().setNavigationBarHidden(true, animated: true)
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         //获取手指
         let touch = (touches as NSSet).anyObject() as! UITouch
@@ -133,12 +155,12 @@ class DeceitGameView: UIView {
             return;
         }
         // center.x += offsetX
-        center.y += offsetY
+        center.y = center.y + offsetY
         
-        if (center.y>screenHeight/2+screenHeight/4) {
+        /* if (center.y>screenHeight/2+screenHeight/4) {
             self.findController().dismiss(animated: true, completion: nil)
-        }
-        
+        } */
+
         self.center = center
     }
     

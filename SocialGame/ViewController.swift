@@ -31,6 +31,9 @@ let centerViewHeight : CGFloat = screenHeight - statusBarHeight - navigationHeig
 let centerViewX : CGFloat = 0;
 let centerViewY : CGFloat = statusBarHeight + navigationHeight;
 
+
+let deceitGameView : DeceitGameView = DeceitGameView()
+
 class ViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -68,6 +71,9 @@ class ViewController: UITabBarController {
         mineScene.tabBarItem.image = UIImage.ionicon(with: .mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         mineScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         self.addChildViewController(mineScene)
+        
+        deceitGameView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
+        self.view.addSubview(deceitGameView)
     }
 
     override func didReceiveMemoryWarning() {

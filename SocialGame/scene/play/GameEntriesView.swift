@@ -12,6 +12,8 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
 
         super.init(frame: frame, collectionViewLayout: layout)
         
+        self.alpha = 1
+        
         // self.init(frame: self.layer.bounds, collectionViewLayout: layout)
         self.frame = CGRect(x: 0, y: 0, width: centerViewWidth, height: centerViewHeight)
         self.backgroundColor = UIColor.white
@@ -50,6 +52,28 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         return 15
     }
     
+    func popDeceitGame(y: CGFloat)
+    {
+        deceitGameView.frame = CGRect(x: 0, y: y, width: screenWidth, height: screenHeight)
+        
+        let center = deceitGameView.center
+        if (center.y > screenHeight / 2 + 20)
+        {
+            deceitGameView.center.y = center.y - 1
+            let time: TimeInterval = 1000.0
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+                self.popDeceitGame(y: 20)
+            }
+        }
+        
+        UIApplication.shared
+        //self.findNavigator().tabBarController?.tabBar.tintColor = .white
+        //self.findNavigator().tabBarController?.tabBar.backgroundColor = .black
+        // self.findNavigator().navigationBar.barTintColor = .white
+        // self.findController().navigationController?.navigationBar.backgroundColor = .black
+        // UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     // 点击 cell 的时候
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
@@ -58,8 +82,12 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         
         // self.findNavigator()?.present(self.deceitGameView, animated: true, completion: nil)
         // self.findController().preferredStatusBarStyle = UIStatusBarStyle.lightContent
-        deceitGameView.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
-        self.isHidden = false
+        
+        self.popDeceitGame(y: 20)
+        // deceitGameView.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+        
+        //self.findNavigator().isNavigationBarHidden = true
+        //self.findNavigator().tabBarController?.tabBar.isHidden = true
         // self.findNavigator()?.present(self.deceitGameView, animated: true)
         // self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
         // self.findController()?.tabBarController?.tabBar.isHidden = true;
