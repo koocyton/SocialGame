@@ -10,17 +10,30 @@ import UIKit
 
 let cellHeight : CGFloat = 200
 
+let deceitGameView : DeceitGameView = DeceitGameView()
+
 class PlaySceneController: UIViewController {
     
+    
+    
+    // let deceitGameView : DeceitGameView
+    
     override func viewDidLoad() {
+        
+        // self.view.deceitGameView = DeceitGameView()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        
+        self.view.addSubview(deceitGameView)
+        
         self.navigationItem.title = "Play"
         self.view.backgroundColor = UIColor.white
         // self.tabBarController?.tabBar.isHidden = false;
         
         self.addPlaySubView()
+        
     }
     
     func addPlaySubView() {

@@ -8,36 +8,48 @@
 
 import UIKit
 
-class DeceitGameView: UIViewController {
+class DeceitGameView: UIView {
     
-    let gameScreen = UIView();
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.frame = frame
+        self.layer.cornerRadius = 10.0
+        self.backgroundColor = UIColor.white
+        self.alpha = 1
+        
+        self.addGameScreen()
+    }
+    
+    // let gameScreen = UIView();
 
-    override func viewDidLoad() {
+    /* override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         self.navigationItem.title = "Deceit Game"
+        
+        //self.alpha = 0.5
+        //self.alp
         
         // override var preferredStatusBarStyle: UIStatusBarStyle
         // UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
 
         self.addGameScreen()
         // self.view.backgroundColor = UIColor.black;
-    }
+    } */
     
     func addGameScreen() {
         // let gameScreen = UIView();
-        self.gameScreen.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
-        self.gameScreen.layer.cornerRadius = 10.0
-        self.gameScreen.backgroundColor = UIColor.white
+        // self.gameScreen.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+
 
         let goBackImage = UIImage.ionicon(with: .drag, textColor: UIColor.darkGray, size: CGSize(width: 60, height: 20))
         let goBackBtn = UIButton()
         goBackBtn.frame = CGRect(x: screenWidth/2-30, y: 0, width: 30, height: 20)
         goBackBtn.setImage(goBackImage, for: .normal)
         goBackBtn.sizeToFit()
-        goBackBtn.addTarget(self, action:#selector(self.goBack), for:.touchUpInside)
-        self.gameScreen.addSubview(goBackBtn)
+        // goBackBtn.addTarget(self, action:#selector(self.goBack), for:.touchUpInside)
+        self.addSubview(goBackBtn)
         
         // let person1 = UIImage.ionicon(with: .person, textColor: UIColor.darkGray, size: CGSize(width: 60, height: 60))
         
@@ -51,7 +63,7 @@ class DeceitGameView: UIViewController {
             person1.layer.cornerRadius = 4
             person1.layer.borderWidth = 1
             person1.layer.borderColor = UIColor.gray.cgColor
-            self.gameScreen.addSubview(person1)
+            self.addSubview(person1)
         }
         
         for ii in 0...5 {
@@ -65,17 +77,19 @@ class DeceitGameView: UIViewController {
             person1.layer.cornerRadius = 4
             person1.layer.borderWidth = 1
             person1.layer.borderColor = UIColor.gray.cgColor
-            self.gameScreen.addSubview(person1)
+            self.addSubview(person1)
         }
         
-        self.view.addSubview(self.gameScreen)
+        // self.view.addSubview(self.gameScreen)
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+
+    /* 
+ override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
         // return UIStatusBarStyle.Default
     }
-
+*/
     func findController() -> UIViewController! {
         return self.findControllerWithClass(UIViewController.self)
     }
@@ -94,9 +108,42 @@ class DeceitGameView: UIViewController {
         }
         return nil
     }
+
     
-    func goBack() {
-        self.dismiss(animated: true, completion: nil)
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //获取手指
+        let touch = (touches as NSSet).anyObject() as! UITouch
+        let nowLocation = touch.location(in: self)
+        let preLocation = touch.previousLocation(in: self)
+        
+        //获取两个手指的偏移量
+        // let offsetX = nowLocation.x - preLocation.x
+        let offsetY = nowLocation.y - preLocation.y
+        
+        var center = self.center
+        if (center.y+offsetY-screenHeight/2+20<20) {
+            return;
+        }
+        // center.x += offsetX
+        center.y += offsetY
+        
+        if (center.y>screenHeight/2+screenHeight/4) {
+            self.findController().dismiss(animated: true, completion: nil)
+        }
+        
+        self.center = center
+    }
+    
+    //func goBack() {
+    //    self.dismiss(animated: true, completion: nil)
         /*
         let alertController = UIAlertController(title: "System message",
                                                 message: "Do you want to quit the game?", preferredStyle: .alert)
@@ -110,11 +157,10 @@ class DeceitGameView: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
         */
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //}
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

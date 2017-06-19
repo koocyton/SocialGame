@@ -4,11 +4,11 @@ import UIKit
 
 class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    let deceitGameView : DeceitGameView
+    // let deceitGameView : DeceitGameView
 
     init(frame: CGRect, layout: UICollectionViewLayout) {
 
-        self.deceitGameView = DeceitGameView()
+        // self.deceitGameView = DeceitGameView()
 
         super.init(frame: frame, collectionViewLayout: layout)
         
@@ -20,6 +20,9 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         self.dataSource = self
         //注册一个cell
         self.register(GameCell.self, forCellWithReuseIdentifier:"GameCell")
+        
+        
+        // self.addSubview(self.deceitGameView)
     }
 
     func findController() -> UIViewController! {
@@ -52,7 +55,12 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
         //channelAudioView.play()
         // self.findController().hidesBottomBarWhenPushed = true
-        self.findNavigator()?.present(self.deceitGameView, animated: true)
+        
+        // self.findNavigator()?.present(self.deceitGameView, animated: true, completion: nil)
+        // self.findController().preferredStatusBarStyle = UIStatusBarStyle.lightContent
+        deceitGameView.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+        self.isHidden = false
+        // self.findNavigator()?.present(self.deceitGameView, animated: true)
         // self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
         // self.findController()?.tabBarController?.tabBar.isHidden = true;
         // self.findController().hidesBottomBarWhenPushed = false
