@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8AC049BE5AB7BFF3B535C36 /* Pods_SocialGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2772C11EEFB8EB00ABF5B2 /* SocialGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2772C41EEFB8EB00ABF5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA2772C61EEFB8EB00ABF5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,11 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43D7C106DC183EB65E8B6DFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8AC049BE5AB7BFF3B535C36 /* Pods_SocialGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA2772B81EEFB8EA00ABF5B2 = {
 			isa = PBXGroup;
 			children = (
 				BA2772C31EEFB8EB00ABF5B2 /* SocialGame */,
 				BA2772C21EEFB8EB00ABF5B2 /* Products */,
+				43D7C106DC183EB65E8B6DFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

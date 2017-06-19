@@ -21,10 +21,12 @@ public enum Ionicons: String {
     case selected_mine = "\u{f3e4}"
     
     case add_person = "\u{f211}"
-    
+
     case person = "\u{f47e}"
     
     case go_back = "\u{f3cf}"
     
     case drag = "\u{f421}"
+    
+    case search = "\u{f4a4}"
 }

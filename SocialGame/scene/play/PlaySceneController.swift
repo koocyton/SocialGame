@@ -47,7 +47,7 @@ class PlaySceneController: UIViewController {
         // 滚动方向
         collectionLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         //设置所有cell的size
-        collectionLayout.itemSize = CGSize(width:screenWidth, height: cellHeight)
+        collectionLayout.itemSize = CGSize(width:screenWidth, height: screenWidth) //cellHeight
         //上下间隔
         collectionLayout.minimumLineSpacing = 0
         //左右间隔

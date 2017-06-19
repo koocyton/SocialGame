@@ -81,27 +81,27 @@ class GameCell: UICollectionViewCell {
     
     var cover = UIImageView()
     
-    // var title = UILabel()
+    var title = UILabel()
     
     // var intro = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let imageHeight = cellHeight - 20
+        let imageWidth = screenWidth / 2
         
         // 封面图
         cover = UIImageView.init(frame: self.layer.bounds)
-        cover.frame = CGRect(x: 10, y: 10, width: imageHeight, height: imageHeight)
-        cover.image = UIImage(named: "resource/image/chrome")
+        cover.frame = CGRect(x: screenWidth / 4, y: screenWidth / 4, width: imageWidth, height: imageWidth)
+        cover.image = UIImage(named: "resource/image/timg")
         self.addSubview(cover)
         
         // 标题
-        // title.frame = CGRect(x: imageHeight + 20 + 10, y: 10, width: screenWidth - imageHeight - 30, height: 20)
-        // title.text = "标题"
-        // title.textAlignment = NSTextAlignment.center
-        // title.textColor = UIColor.lightGray
-        //self.addSubview(title)
+        title.frame = CGRect(x: 0, y: screenWidth / 18, width: screenWidth, height: screenWidth / 8)
+        title.text = "Were Wolf"
+        title.textAlignment = NSTextAlignment.center
+        title.textColor = UIColor.black
+        self.addSubview(title)
         
         // 介绍
         //intro.frame = CGRect(x: imageHeight + 30, y: 40, width: screenWidth - imageHeight - 40, height: imageHeight - 30)
@@ -114,7 +114,7 @@ class GameCell: UICollectionViewCell {
         // 插入下划线
         let hrView = UIView(frame: (self.layer.bounds))
         hrView.frame = CGRect(x: 0, y: self.layer.bounds.size.height, width: screenWidth, height: 1)
-        hrView.layer.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 0.5).cgColor
+        hrView.layer.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.8).cgColor
         self.addSubview(hrView)
     }
     

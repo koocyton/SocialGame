@@ -22,7 +22,7 @@ class FriendDetailScreen: UIViewController {
         // self.tabBarController?.tabBar.isHidden = true;
         // self.findController().hidesBottomBarWhenPushed = false
         
-        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.darkGray, size: CGSize(width: 21, height: 21))
+        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.darkGray, size: CGSize(width: 30, height: 30))
         let goBackBtn = UIButton()
         goBackBtn.setImage(goBackImage, for: .normal)
         goBackBtn.sizeToFit()

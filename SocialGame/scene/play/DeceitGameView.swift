@@ -39,6 +39,35 @@ class DeceitGameView: UIViewController {
         goBackBtn.addTarget(self, action:#selector(self.goBack), for:.touchUpInside)
         self.gameScreen.addSubview(goBackBtn)
         
+        // let person1 = UIImage.ionicon(with: .person, textColor: UIColor.darkGray, size: CGSize(width: 60, height: 60))
+        
+        for ii in 0...5 {
+            let y = 40 + ii * 80
+            let person1 = UIButton()
+            person1.frame = CGRect(x: 10, y: y, width: 70, height: 70)
+            person1.setImage(
+            UIImage.ionicon(with: .person, textColor: UIColor.darkGray, size: CGSize(width: 70, height: 70)),
+            for: .normal)
+            person1.layer.cornerRadius = 4
+            person1.layer.borderWidth = 1
+            person1.layer.borderColor = UIColor.gray.cgColor
+            self.gameScreen.addSubview(person1)
+        }
+        
+        for ii in 0...5 {
+            let y = 40 + ii * 80
+            let x = screenWidth - 80
+            let person1 = UIButton()
+            person1.frame = CGRect(x: Int(x), y: y, width: 70, height: 70)
+            person1.setImage(
+                UIImage.ionicon(with: .person, textColor: UIColor.darkGray, size: CGSize(width: 70, height: 70)),
+                for: .normal)
+            person1.layer.cornerRadius = 4
+            person1.layer.borderWidth = 1
+            person1.layer.borderColor = UIColor.gray.cgColor
+            self.gameScreen.addSubview(person1)
+        }
+        
         self.view.addSubview(self.gameScreen)
     }
     
