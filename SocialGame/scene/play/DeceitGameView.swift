@@ -188,7 +188,7 @@ class DeceitGameView: UIView {
         }
         else {
             self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
-            self.diDong()
+            // self.diDong()
         }
     }
     

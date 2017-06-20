@@ -23,7 +23,7 @@ class PlaySceneController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        self.view.alpha = 1
+        // self.view.alpha = 1
 
         self.navigationItem.title = "Play"
         self.view.backgroundColor = UIColor.white
@@ -43,7 +43,7 @@ class PlaySceneController: UIViewController {
         // 大小
         playScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         // 滑动区的内容区的大小
-        // playScrollView.contentSize = CGSize(width: centerViewWidth , height:centerViewHeight * 2)
+        // playScrollView.contentSize = CGSize(width: screenWidth , height:screenHeight + 200)
         // 背景色
         // self.backgroundColor = UIColor.darkGray
         // 是否按页滚动

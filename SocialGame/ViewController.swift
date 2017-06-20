@@ -53,8 +53,10 @@ class ViewController: UITabBarController {
         let playScene = UINavigationController(rootViewController: PlaySceneController())
         // playScene.navigationBar.isHidden = true
         playScene.navigationBar.barStyle = .blackOpaque
+        playScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
+        playScene.navigationBar.shadowImage = UIImage()
         playScene.navigationBar.isTranslucent = true
-        playScene.navigationBar.alpha = 0.8
+        playScene.navigationBar.alpha = 0.5
         playScene.tabBarItem.title = "Play";
         playScene.tabBarItem.image = UIImage.ionicon(with: .play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         playScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
