@@ -15,7 +15,8 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         self.alpha = 1
         
         // self.init(frame: self.layer.bounds, collectionViewLayout: layout)
-        self.frame = CGRect(x: 0, y: 0, width: centerViewWidth, height: centerViewHeight)
+        self.frame = CGRect(x: 0, y: -60, width: screenWidth, height: screenHeight)
+        // self.contentSize = CGSize(width: centerViewWidth, height: centerViewHeight)
         self.backgroundColor = UIColor.white
         // delegate
         self.delegate = self
@@ -26,26 +27,6 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         
         // self.addSubview(self.deceitGameView)
     }
-
-    func findController() -> UIViewController! {
-        return self.findControllerWithClass(UIViewController.self)
-    }
-    
-    func findNavigator() -> UINavigationController! {
-        return self.findControllerWithClass(UINavigationController.self)
-    }
-    
-    func findControllerWithClass<T>(_ clzz: AnyClass) -> T? {
-        var responder = self.next
-        while(responder != nil) {
-            if (responder!.isKind(of: clzz)) {
-                return responder as? T
-            }
-            responder = responder?.next
-        }
-        return nil
-    }
-    
     
     // 有多少个 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int

@@ -21,6 +21,7 @@ class FriendsSceneController: UIViewController {
         
         self.navigationItem.title = "Friends"
         self.view.backgroundColor = UIColor.white
+        self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
 
         let rightButtonImage = UIImage.ionicon(with: .add_person, textColor: UIColor.white, size: CGSize(width: 21, height: 21))
         let btn = UIButton()

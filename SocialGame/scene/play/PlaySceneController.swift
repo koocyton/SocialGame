@@ -21,6 +21,8 @@ class PlaySceneController: UIViewController {
         // self.view.deceitGameView = DeceitGameView()
         
         super.viewDidLoad()
+        
+        self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         // Do any additional setup after loading the view, typically from a nib.
 
         // self.view.alpha = 1
@@ -42,8 +44,11 @@ class PlaySceneController: UIViewController {
         let playScrollView = UIScrollView()
         // 大小
         playScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        // playScrollView.po
+        // playScrollView.contentOffset = CGPoint(x:0, y:-60)
         // 滑动区的内容区的大小
-        // playScrollView.contentSize = CGSize(width: screenWidth , height:screenHeight + 200)
+        // playScrollView.contentSize = CGSize(width: screenWidth, height: screenHeight - 200)
+        // playScrollView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         // 背景色
         // self.backgroundColor = UIColor.darkGray
         // 是否按页滚动

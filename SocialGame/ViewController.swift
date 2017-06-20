@@ -65,6 +65,10 @@ class ViewController: UITabBarController {
         // UI Friend VIEW Controller
         let friendsScene = UINavigationController(rootViewController: FriendsSceneController())
         friendsScene.navigationBar.barStyle = .blackTranslucent
+        friendsScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
+        friendsScene.navigationBar.shadowImage = UIImage()
+        friendsScene.navigationBar.isTranslucent = true
+        friendsScene.navigationBar.alpha = 0.5
         friendsScene.tabBarItem.title = "Friends";
         friendsScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         friendsScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
