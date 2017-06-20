@@ -21,7 +21,7 @@ class AddPersonScreen: UIViewController {
         self.navigationItem.title = "Add Person"
         self.view.backgroundColor = UIColor.white
         
-        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.darkGray, size: CGSize(width: 30, height: 30))
+        let goBackImage = UIImage.ionicon(with: .go_back, textColor: UIColor.white, size: CGSize(width: 30, height: 30))
         let goBackBtn = UIButton()
         goBackBtn.setImage(goBackImage, for: .normal)
         goBackBtn.sizeToFit()

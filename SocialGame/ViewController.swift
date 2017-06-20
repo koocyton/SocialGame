@@ -44,8 +44,17 @@ class ViewController: UITabBarController {
         // self.tabBar.backgroundColor = UIColor.black
         // self.tabBar.backgroundColor = UIColor.darkGray
 
+        // 毛玻璃效果
+        //let blurEffect = UIBlurEffect(style: .regular)
+        //let blurView = UIVisualEffectView(effect: blurEffect)
+        //blurView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: audioPlayHeight)
+        
         // UI Play VIEW Controller
         let playScene = UINavigationController(rootViewController: PlaySceneController())
+        // playScene.navigationBar.isHidden = true
+        playScene.navigationBar.barStyle = .blackOpaque
+        playScene.navigationBar.isTranslucent = true
+        playScene.navigationBar.alpha = 0.8
         playScene.tabBarItem.title = "Play";
         playScene.tabBarItem.image = UIImage.ionicon(with: .play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         playScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
@@ -53,6 +62,7 @@ class ViewController: UITabBarController {
 
         // UI Friend VIEW Controller
         let friendsScene = UINavigationController(rootViewController: FriendsSceneController())
+        friendsScene.navigationBar.barStyle = .blackTranslucent
         friendsScene.tabBarItem.title = "Friends";
         friendsScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         friendsScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
@@ -60,6 +70,7 @@ class ViewController: UITabBarController {
 
         // UI Message VIEW Controller
         let messageScene = UINavigationController(rootViewController: MessageSceneController())
+        messageScene.navigationBar.barStyle = .black
         messageScene.tabBarItem.title = "Message";
         messageScene.tabBarItem.image = UIImage.ionicon(with: .message, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         messageScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_message, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
@@ -67,6 +78,7 @@ class ViewController: UITabBarController {
 
         // UI Mine VIEW Controller
         let mineScene = UINavigationController(rootViewController: MineSceneController())
+        mineScene.navigationBar.barStyle = .default
         mineScene.tabBarItem.title = "Mine";
         mineScene.tabBarItem.image = UIImage.ionicon(with: .mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         mineScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
@@ -74,6 +86,11 @@ class ViewController: UITabBarController {
         
         deceitGameView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
         self.view.addSubview(deceitGameView)
+        // self.navigationController?.navigationBar.barStyle = .black
+    }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {

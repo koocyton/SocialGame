@@ -8,7 +8,13 @@
 
 import UIKit
 
+import AVFoundation
+
+import MediaPlayer
+
 class DeceitGameView: UIView {
+    
+    var audioPlayer: AVAudioPlayer? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,27 +124,7 @@ class DeceitGameView: UIView {
      }
      */
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let center = self.center
-        if (center.y>screenHeight/2+screenHeight/4) {
-            self.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
-            // self.findNavigator().navigationController?.navigationBar.barStyle = .default
-            //self.findNavigator().isNavigationBarHidden = false
-            //self.findNavigator().tabBarController?.tabBar.isHidden = false
-            //self.findNavigator().setNavigationBarHidden(false, animated: true)
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
-        else {
-            self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
-            // self.findNavigator().navigationController?.navigationBar.barStyle = .black
-            //self.findNavigator().isNavigationBarHidden = true
-            //self.findNavigator().navigationController?.view.backgroundColor = UIColor.red
-            //self.findNavigator().tabBarController?.tabBar.isHidden = true
-            // self.findNavigator().navigationController?.view.accessibilityNavigationStyle = .lightContent
-            //self.findNavigator().setNavigationBarHidden(true, animated: true)
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
-    }
+
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         //获取手指
@@ -151,7 +137,7 @@ class DeceitGameView: UIView {
         let offsetY = nowLocation.y - preLocation.y
         
         var center = self.center
-        if (center.y+offsetY-screenHeight/2+20<20) {
+        if (center.y+offsetY-screenHeight/2<20) {
             return;
         }
         // center.x += offsetX
@@ -164,22 +150,61 @@ class DeceitGameView: UIView {
         self.center = center
     }
     
-    //func goBack() {
-    //    self.dismiss(animated: true, completion: nil)
-        /*
-        let alertController = UIAlertController(title: "System message",
-                                                message: "Do you want to quit the game?", preferredStyle: .alert)
-        let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
-        let okAction = UIAlertAction(title: "Yes", style: .default, handler: {_ in
-            self.dismiss(animated: true, completion: nil)
-            // self.navigationController?.popViewController(animated: true)
-            // self.tabBarController?.tabBar.isHidden = false;
-        })
-        alertController.addAction(noAction)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-        */
-    //}
+    func diDong(){
+        // let path = Bundle.main.path(forResource: "zjl", ofType: "m4a")
+        let url = Bundle.main.url(forResource: "resource/music/didong", withExtension: "mp3")!
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+            // self.nohidd()
+        }
+        catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if (self.frame.origin.y > screenHeight/8) {
+            self.slideOut()
+        }
+        else {
+            self.slideInto()
+        }
+    }
+    
+    func slideInto()
+    {
+        if (self.frame.origin.y > 20) {
+            let y = self.frame.origin.y - 5
+            let time: TimeInterval = 0.0003
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+                self.frame = CGRect(x: 0, y: y, width: screenWidth, height: screenHeight)
+                self.slideInto()
+            }
+        }
+        else {
+            self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+            self.diDong()
+        }
+    }
+    
+    func slideOut() {
+        if (self.frame.origin.y < screenHeight) {
+            let y = self.frame.origin.y + 5
+            let time: TimeInterval = 0.0003
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+                self.frame = CGRect(x: 0, y: y, width: screenWidth, height: screenHeight)
+                self.slideOut()
+            }
+        }
+        else {
+            self.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

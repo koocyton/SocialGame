@@ -32,6 +32,10 @@ class PlaySceneController: UIViewController {
         self.addPlaySubView()
     }
     
+    /* override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    } */
+    
     func addPlaySubView() {
 
         // 插入游戏界面

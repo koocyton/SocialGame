@@ -48,62 +48,20 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
     
     
     // 有多少个 cell
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func popDeceitGame(y: CGFloat)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        deceitGameView.frame = CGRect(x: 0, y: y, width: screenWidth, height: screenHeight)
-        
-        let center = deceitGameView.center
-        if (center.y > screenHeight / 2 + 20)
-        {
-            deceitGameView.center.y = center.y - 1
-            let time: TimeInterval = 1000.0
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
-                self.popDeceitGame(y: 20)
-            }
-        }
-        
-        UIApplication.shared
-        //self.findNavigator().tabBarController?.tabBar.tintColor = .white
-        //self.findNavigator().tabBarController?.tabBar.backgroundColor = .black
-        // self.findNavigator().navigationBar.barTintColor = .white
-        // self.findController().navigationController?.navigationBar.backgroundColor = .black
-        // UIApplication.shared.statusBarStyle = .lightContent
+        return 3
     }
     
     // 点击 cell 的时候
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let channelAudioView : ChannelAudioView = self.superview?.superview?.viewWithTag(51) as! ChannelAudioView
-        //channelAudioView.play()
-        // self.findController().hidesBottomBarWhenPushed = true
-        
-        // self.findNavigator()?.present(self.deceitGameView, animated: true, completion: nil)
-        // self.findController().preferredStatusBarStyle = UIStatusBarStyle.lightContent
-        
-        self.popDeceitGame(y: 20)
-        // deceitGameView.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
-        
-        //self.findNavigator().isNavigationBarHidden = true
-        //self.findNavigator().tabBarController?.tabBar.isHidden = true
-        // self.findNavigator()?.present(self.deceitGameView, animated: true)
-        // self.findNavigator()?.pushViewController(self.deceitGameView, animated: true)
-        // self.findController()?.tabBarController?.tabBar.isHidden = true;
-        // self.findController().hidesBottomBarWhenPushed = false
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        // deceitGameView.slideInto()
     }
     
     // 每个 cell 的处理
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // default cover
-        // let ii : Int = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
-        // cell.frame = CGRect(x: 0, y: indexPath.row * Int(cellHeight), width: Int(screenWidth), height: Int(cellHeight))
-        // cell.title.text = "\(channelModel.data[index]["content"][ii]["title"])"
-        // cell.intro.text = "\(channelModel.data[index]["content"][ii]["introduction"])"
-        // cell.layer.borderColor = UIColor.gray.cgColor
-        // cell.layer.borderWidth = 1
         return cell
     }
     
@@ -119,33 +77,36 @@ class GameCell: UICollectionViewCell {
     
     var title = UILabel()
     
-    // var intro = UILabel()
+    var joinBtn = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         let imageWidth = screenWidth / 2
         
-        // 封面图
-        cover = UIImageView.init(frame: self.layer.bounds)
-        cover.frame = CGRect(x: screenWidth / 4, y: screenWidth / 4, width: imageWidth, height: imageWidth)
-        cover.image = UIImage(named: "resource/image/timg")
-        self.addSubview(cover)
-        
         // 标题
-        title.frame = CGRect(x: 0, y: screenWidth / 18, width: screenWidth, height: screenWidth / 8)
+        title.frame = CGRect(x: 0, y: 10, width: screenWidth, height: screenWidth / 8)
         title.text = "Were Wolf"
         title.textAlignment = NSTextAlignment.center
         title.textColor = UIColor.black
         self.addSubview(title)
-        
-        // 介绍
-        //intro.frame = CGRect(x: imageHeight + 30, y: 40, width: screenWidth - imageHeight - 40, height: imageHeight - 30)
-        // intro.text = "这里放好听的歌的介绍"
-        //intro.textAlignment = NSTextAlignment.left
-        //intro.textColor = UIColor.lightGray
-        // intro.backgroundColor = UIColor.blue
-        //self.addSubview(intro)
+
+        // 封面图
+        // cover = UIImageView.init(frame: self.layer.bounds)
+        cover.frame = CGRect(x: screenWidth / 4, y: screenWidth / 4, width: imageWidth, height: imageWidth)
+        cover.image = UIImage(named: "resource/image/timg")
+        self.addSubview(cover)
+
+        // 按钮
+        joinBtn.frame = CGRect(x: (screenWidth-170)/2, y: screenWidth - screenWidth / 6, width: 170, height: 40)
+        joinBtn.setTitle("我是狼 ...", for: .normal)
+        joinBtn.setTitleColor(UIColor.black, for: .normal)
+        joinBtn.tintColor = UIColor.black
+        joinBtn.layer.cornerRadius = 4
+        joinBtn.layer.borderWidth = 1
+        joinBtn.layer.borderColor = UIColor.black.cgColor
+        joinBtn.addTarget(deceitGameView, action:#selector(deceitGameView.slideInto), for:.touchUpInside)
+        self.addSubview(joinBtn)
         
         // 插入下划线
         let hrView = UIView(frame: (self.layer.bounds))

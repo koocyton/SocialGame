@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // set status bar
-        UIApplication.shared.statusBarStyle = .lightContent
+        // UIApplication.shared.statusBarStyle = .lightContent
 
         // set background
         // self.window = UIWindow(frame: UIScreen.main.bounds)
