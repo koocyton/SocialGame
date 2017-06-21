@@ -23,6 +23,7 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         self.dataSource = self
         //注册一个cell
         self.register(GameCell.self, forCellWithReuseIdentifier:"GameCell")
+        self.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"UICollectionViewCell")
         
         
         // self.addSubview(self.deceitGameView)
@@ -31,7 +32,7 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
     // 有多少个 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 3
+        return 5
     }
     
     // 点击 cell 的时候
