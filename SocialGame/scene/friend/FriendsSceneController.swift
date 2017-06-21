@@ -19,7 +19,7 @@ class FriendsSceneController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "好友"
+        self.navigationItem.title = "活跃好友，邀请，好友等级"
         self.view.backgroundColor = UIColor.white
         self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
 

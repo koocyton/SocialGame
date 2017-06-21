@@ -59,6 +59,7 @@ class AddPersonScreen: UIViewController {
         fbLable.layer.borderWidth = 1
         fbLable.layer.borderColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 0.8).cgColor
         fbLable.setTitle("添加 Facebook 好友", for: .normal)
+        fbLable.contentHorizontalAlignment = .left
         //button标题的偏移量，这个偏移量是相对于图片的
         fbLable.titleEdgeInsets = UIEdgeInsetsMake(10, 30, 10, screenWidth - 250);
         //设置button正常状态下的标题颜色
@@ -80,6 +81,7 @@ class AddPersonScreen: UIViewController {
         twLable.layer.borderWidth = 1
         twLable.layer.borderColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 0.8).cgColor
         twLable.setTitle("添加 Twitter 好友", for: .normal)
+        twLable.contentHorizontalAlignment = .left
         //button标题的偏移量，这个偏移量是相对于图片的
         twLable.titleEdgeInsets = UIEdgeInsetsMake(10, 30, 10, screenWidth - 250);
         //设置button正常状态下的标题颜色
@@ -99,6 +101,7 @@ class AddPersonScreen: UIViewController {
         wxLable.layer.borderWidth = 1
         wxLable.layer.borderColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 0.8).cgColor
         wxLable.setTitle("添加 Wechat 好友", for: .normal)
+        wxLable.contentHorizontalAlignment = .left
         wxLable.titleEdgeInsets = UIEdgeInsetsMake(10, 30, 10, screenWidth - 250);
         wxLable.setTitleColor(UIColor.black, for: .normal)
         wxLable.setTitleColor(UIColor.darkGray, for: .highlighted)

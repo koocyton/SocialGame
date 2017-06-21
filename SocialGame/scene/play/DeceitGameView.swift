@@ -91,6 +91,9 @@ class DeceitGameView: UIView {
         mic.setImage(
             UIImage.ionicon(with: .mic, textColor: UIColor.darkGray, size: CGSize(width: 50, height: 50)),
             for: .normal)
+        mic.setImage(
+            UIImage.ionicon(with: .mic, textColor: UIColor(red: 111/255, green: 237/255, blue: 47/255, alpha: 0.8), size: CGSize(width: 50, height: 50)),
+            for: .highlighted)
         mic.layer.cornerRadius = 35
         mic.layer.borderWidth = 1
         mic.layer.borderColor = UIColor.gray.cgColor

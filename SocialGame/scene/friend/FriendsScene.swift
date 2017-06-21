@@ -97,19 +97,20 @@ class FriendCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let imageHeight = 40
+        let imageHeight = 50
         
         // 封面图
         cover = UIImageView.init(frame: self.layer.bounds)
         cover.frame = CGRect(x: 5, y: 5, width: imageHeight, height: imageHeight)
-        cover.image = UIImage.ionicon(with: .person, textColor: UIColor.gray, size: CGSize(width: imageHeight, height: imageHeight))
+        cover.image = UIImage(named:"resource/image/fanghan")
+        // cover.image = UIImage.ionicon(with: .person, textColor: UIColor.black, size: CGSize(width: imageHeight, height: imageHeight))
         self.addSubview(cover)
         
         // 好友名字
-        name.frame = CGRect(x: imageHeight, y: 15, width: 100, height: 20)
-        name.text = "刘德华"
-        name.textAlignment = NSTextAlignment.center
-        name.textColor = UIColor.lightGray
+        name.frame = CGRect(x: 70, y: 20, width: 100, height: 20)
+        name.text = "方汉"
+        name.textAlignment = NSTextAlignment.left
+        name.textColor = UIColor.black
         self.addSubview(name)
         
         // 介绍
