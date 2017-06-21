@@ -14,7 +14,7 @@ class MineSceneController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "Mine"
+        self.navigationItem.title = "个人信息"
         self.view.backgroundColor = UIColor.white;
         
         let profile = UIView()

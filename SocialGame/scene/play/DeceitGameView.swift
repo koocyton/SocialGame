@@ -86,6 +86,16 @@ class DeceitGameView: UIView {
             self.addSubview(person1)
         }
         
+        let mic = UIButton()
+        mic.frame = CGRect(x: screenWidth/2 - 35, y: screenHeight - 100, width: 70, height: 70)
+        mic.setImage(
+            UIImage.ionicon(with: .mic, textColor: UIColor.darkGray, size: CGSize(width: 50, height: 50)),
+            for: .normal)
+        mic.layer.cornerRadius = 35
+        mic.layer.borderWidth = 1
+        mic.layer.borderColor = UIColor.gray.cgColor
+        self.addSubview(mic)
+        
         // self.view.addSubview(self.gameScreen)
     }
     

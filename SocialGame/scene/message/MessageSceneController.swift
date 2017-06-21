@@ -14,7 +14,7 @@ class MessageSceneController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "视频，直播，图文"
+        self.navigationItem.title = "视频，直播，图文，综合类"
         self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         self.view.backgroundColor = UIColor.white;
         

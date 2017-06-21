@@ -31,4 +31,6 @@ public enum Ionicons: String {
     case search = "\u{f4a4}"
     
     case setup = "\u{f13d}"
+    
+    case mic = "\u{f2ec}"
 }
