@@ -21,7 +21,7 @@ class FriendsScene: UICollectionView, UICollectionViewDataSource, UICollectionVi
         // self.init(frame: self.layer.bounds, collectionViewLayout: layout)
         // self.frame = CGRect(x: 0, y: 0, width: centerViewWidth, height: centerViewHeight)
         
-        self.frame = CGRect(x: 0, y: -60, width: screenWidth, height: screenHeight)
+        self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         
         self.backgroundColor = UIColor.white
         // delegate

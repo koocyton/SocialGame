@@ -56,7 +56,7 @@ class ViewController: UITabBarController {
         playScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
         playScene.navigationBar.shadowImage = UIImage()
         playScene.navigationBar.isTranslucent = true
-        playScene.navigationBar.alpha = 0.5
+        playScene.navigationBar.alpha = 0.8
         playScene.tabBarItem.title = "Play";
         playScene.tabBarItem.image = UIImage.ionicon(with: .play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         playScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_play, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
@@ -68,7 +68,7 @@ class ViewController: UITabBarController {
         friendsScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
         friendsScene.navigationBar.shadowImage = UIImage()
         friendsScene.navigationBar.isTranslucent = true
-        friendsScene.navigationBar.alpha = 0.5
+        friendsScene.navigationBar.alpha = 0.8
         friendsScene.tabBarItem.title = "Friends";
         friendsScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         friendsScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
@@ -77,6 +77,10 @@ class ViewController: UITabBarController {
         // UI Message VIEW Controller
         let messageScene = UINavigationController(rootViewController: MessageSceneController())
         messageScene.navigationBar.barStyle = .black
+        friendsScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
+        friendsScene.navigationBar.shadowImage = UIImage()
+        friendsScene.navigationBar.isTranslucent = true
+        friendsScene.navigationBar.alpha = 0.8
         messageScene.tabBarItem.title = "Message";
         messageScene.tabBarItem.image = UIImage.ionicon(with: .message, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         messageScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_message, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
@@ -84,7 +88,11 @@ class ViewController: UITabBarController {
 
         // UI Mine VIEW Controller
         let mineScene = UINavigationController(rootViewController: MineSceneController())
-        mineScene.navigationBar.barStyle = .default
+        mineScene.navigationBar.barStyle = .black//default
+        friendsScene.navigationBar.setBackgroundImage(UIImage(), for: .compact)
+        friendsScene.navigationBar.shadowImage = UIImage()
+        friendsScene.navigationBar.isTranslucent = true
+        friendsScene.navigationBar.alpha = 0.8
         mineScene.tabBarItem.title = "Mine";
         mineScene.tabBarItem.image = UIImage.ionicon(with: .mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))
         mineScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_mine, textColor: UIColor.darkGray, size: CGSize(width: 26, height: 26))

@@ -40,11 +40,11 @@ class FriendsSceneController: UIViewController {
     func addFriendSubView() {
         
         // 插入好友界面
-        let friendScrollView = UIScrollView()
+        //let friendScrollView = UIScrollView()
         // 大小
-        friendScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        //friendScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         // add subview
-        self.view.addSubview(friendScrollView)
+        //self.view.addSubview(friendScrollView)
         
         // 设定每个 cell
         let collectionLayout = UICollectionViewFlowLayout()
@@ -58,9 +58,9 @@ class FriendsSceneController: UIViewController {
         collectionLayout.minimumInteritemSpacing = 0
         
         // 初始化
-        let friendsScene = FriendsScene.init(frame:friendScrollView.layer.bounds, layout:collectionLayout)
+        let friendsScene = FriendsScene.init(frame:self.view.layer.bounds, layout:collectionLayout)
         // 添加到界面
-        friendScrollView.addSubview(friendsScene)
+        self.view.addSubview(friendsScene)
     }
     
     override func didReceiveMemoryWarning() {

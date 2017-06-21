@@ -29,4 +29,6 @@ public enum Ionicons: String {
     case drag = "\u{f421}"
     
     case search = "\u{f4a4}"
+    
+    case setup = "\u{f13d}"
 }

@@ -41,40 +41,43 @@ class PlaySceneController: UIViewController {
     func addPlaySubView() {
 
         // 插入游戏界面
-        let playScrollView = UIScrollView()
+        //let playScrollView = UIScrollView()
         // 大小
-        playScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        // playScrollView.po
-        // playScrollView.contentOffset = CGPoint(x:0, y:-60)
+        //playScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        // playScrollView.contentInset = UIEdgeInsetsMake(0 - centerViewY, 0.0, 80.0, 0.0)
+        //playScrollView.contentSize = CGSize(width: screenWidth, height: 3 * (screenHeight - 150))
+        
+        // playScrollView.layer.scroll(CGPoint(x: 60, y:60))
+        // playScrollView.contentSize = CGPoint(x:0, y:-60)
         // 滑动区的内容区的大小
-        // playScrollView.contentSize = CGSize(width: screenWidth, height: screenHeight - 200)
-        // playScrollView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
+        // playScrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        // playScrollView.setContentOffset(CGPoint(x: 0, y: -60), animated: false)
         // 背景色
         // self.backgroundColor = UIColor.darkGray
         // 是否按页滚动
-        // self.isPagingEnabled = true
+        //playScrollView.isPagingEnabled = true
         // 水平滚动，而不显示滚动条
         // self.alwaysBounceHorizontal = true
         // 上下滚动
-        // self.showsHorizontalScrollIndicator = true
-        // self.showsVerticalScrollIndicator = false
-        self.view.addSubview(playScrollView)
+        //playScrollView.showsHorizontalScrollIndicator = true
+        //playScrollView.showsVerticalScrollIndicator = false
+        // self.view.addSubview(playScrollView)
         
         // 设定每个 cell
         let collectionLayout = UICollectionViewFlowLayout()
         // 滚动方向
         collectionLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         //设置所有cell的size
-        collectionLayout.itemSize = CGSize(width:screenWidth, height: screenWidth) //cellHeight
+        collectionLayout.itemSize = CGSize(width:screenWidth, height: screenHeight - 150) //cellHeight
         //上下间隔
         collectionLayout.minimumLineSpacing = 0
         //左右间隔
         collectionLayout.minimumInteritemSpacing = 0
 
         // 初始化
-        let gameListView = GameListView.init(frame: playScrollView.layer.bounds, layout: collectionLayout)
+        let gameListView = GameListView.init(frame: self.view.layer.bounds, layout: collectionLayout)
         // 添加到界面
-        playScrollView.addSubview(gameListView)
+        self.view.addSubview(gameListView)
     }
 
     override func didReceiveMemoryWarning() {

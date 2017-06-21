@@ -15,7 +15,7 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         self.alpha = 1
         
         // self.init(frame: self.layer.bounds, collectionViewLayout: layout)
-        self.frame = CGRect(x: 0, y: -60, width: screenWidth, height: screenHeight)
+        // self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         // self.contentSize = CGSize(width: centerViewWidth, height: centerViewHeight)
         self.backgroundColor = UIColor.white
         // delegate
@@ -43,6 +43,20 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
     // 每个 cell 的处理
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
+        let ii = indexPath.row
+        switch ii {
+            case 0:
+                cell.title.text = "Were Wolf"
+                break
+            case 1:
+                cell.title.text = "Mafia"
+                break
+            case 2:
+                cell.title.text = "mine sweeping"
+                break
+            default :
+                cell.title.text = ""
+        }
         return cell
     }
     
@@ -60,10 +74,12 @@ class GameCell: UICollectionViewCell {
     
     var joinBtn = UIButton()
     
+    var helpBtn = UIButton()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let imageWidth = screenWidth / 2
+        let imageWidth = screenWidth - 100
         
         // 标题
         title.frame = CGRect(x: 0, y: 10, width: screenWidth, height: screenWidth / 8)
@@ -74,13 +90,23 @@ class GameCell: UICollectionViewCell {
 
         // 封面图
         // cover = UIImageView.init(frame: self.layer.bounds)
-        cover.frame = CGRect(x: screenWidth / 4, y: screenWidth / 4, width: imageWidth, height: imageWidth)
+        cover.frame = CGRect(x: 50, y: screenWidth / 5, width: imageWidth, height: imageWidth)
         cover.image = UIImage(named: "resource/image/timg")
         self.addSubview(cover)
-
+        
         // 按钮
-        joinBtn.frame = CGRect(x: (screenWidth-170)/2, y: screenWidth - screenWidth / 6, width: 170, height: 40)
-        joinBtn.setTitle("我是狼 ...", for: .normal)
+        helpBtn.frame = CGRect(x: 50, y: screenWidth - screenWidth / 6 + 100, width: 100, height: 40)
+        helpBtn.setTitle("Help", for: .normal)
+        helpBtn.setTitleColor(UIColor.black, for: .normal)
+        helpBtn.tintColor = UIColor.black
+        helpBtn.layer.cornerRadius = 4
+        helpBtn.layer.borderWidth = 1
+        helpBtn.layer.borderColor = UIColor.black.cgColor
+        self.addSubview(helpBtn)
+        
+        // 按钮
+        joinBtn.frame = CGRect(x: 260, y: screenWidth - screenWidth / 6 + 100, width: 100, height: 40)
+        joinBtn.setTitle("Play", for: .normal)
         joinBtn.setTitleColor(UIColor.black, for: .normal)
         joinBtn.tintColor = UIColor.black
         joinBtn.layer.cornerRadius = 4
