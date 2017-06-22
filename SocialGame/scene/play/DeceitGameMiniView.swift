@@ -33,6 +33,8 @@ class DeceitGameMiniView: UIView {
         
         let fayan = UITextView()
         fayan.text = "方汉正在发言"
+        fayan.sizeToFit()
+        fayan.isUserInteractionEnabled = false
         fayan.isEditable = false
         fayan.backgroundColor = UIColor.clear
         fayan.frame = CGRect(x:60, y:15, width:100, height:30)
