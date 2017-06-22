@@ -53,7 +53,7 @@ class FriendsScene: UICollectionView, UICollectionViewDataSource, UICollectionVi
     
     // 有多少个 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 35
+        return 15
     }
     
     // 点击 cell 的时候
@@ -70,8 +70,15 @@ class FriendsScene: UICollectionView, UICollectionViewDataSource, UICollectionVi
     // 每个 cell 的处理
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // default cover
-        // let ii : Int = indexPath.row
+        let ii : Int = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
+        if (ii<=5) {
+            cell.addInvite()
+            cell.name.textColor = UIColor.black
+        }
+        else {
+            cell.name.textColor = UIColor.gray
+        }
         // cell.frame = CGRect(x: 0, y: indexPath.row * Int(cellHeight), width: Int(screenWidth), height: Int(cellHeight))
         // cell.title.text = "\(channelModel.data[index]["content"][ii]["title"])"
         // cell.intro.text = "\(channelModel.data[index]["content"][ii]["introduction"])"
@@ -90,9 +97,11 @@ class FriendCell: UICollectionViewCell {
     
     var cover = UIImageView()
     
-    var name = UILabel()
+    let name = UILabel()
     
-    var intro = UILabel()
+    let invite = UIButton()
+    
+    var inline = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -113,19 +122,23 @@ class FriendCell: UICollectionViewCell {
         name.textColor = UIColor.black
         self.addSubview(name)
         
-        // 介绍
-        //intro.frame = CGRect(x: imageHeight + 30, y: 40, width: screenWidth - imageHeight - 40, height: imageHeight - 30)
-        // intro.text = "这里放好听的歌的介绍"
-        //intro.textAlignment = NSTextAlignment.left
-        //intro.textColor = UIColor.lightGray
-        // intro.backgroundColor = UIColor.blue
-        //self.addSubview(intro)
-        
         // 插入下划线
         let hrView = UIView(frame: (self.layer.bounds))
         hrView.frame = CGRect(x: 0, y: self.layer.bounds.size.height, width: screenWidth, height: 1)
         hrView.layer.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 0.5).cgColor
         self.addSubview(hrView)
+    }
+    
+    func addInvite()
+    {
+        invite.frame = CGRect(x: screenWidth - 100, y: 15, width: 80, height: 30)
+        invite.setTitle("一起玩", for: .normal)
+        invite.setTitleColor(UIColor.black, for: .normal)
+        invite.tintColor = UIColor.black
+        invite.layer.cornerRadius = 4
+        invite.layer.borderWidth = 1
+        invite.layer.borderColor = UIColor.black.cgColor
+        self.addSubview(invite)
     }
     
     required init?(coder aDecoder: NSCoder) {

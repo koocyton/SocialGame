@@ -15,6 +15,7 @@
 		BA2772D21EEFB8EB00ABF5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2772D01EEFB8EB00ABF5B2 /* LaunchScreen.storyboard */; };
 		BA2772DC1EEFBB1D00ABF5B2 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = BA2772DB1EEFBB1D00ABF5B2 /* resource */; };
 		BA2916831EFB68D1007D819E /* GameHelperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2916821EFB68D1007D819E /* GameHelperController.swift */; };
+		BA2916851EFB8A29007D819E /* DeceitGameMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2916841EFB8A29007D819E /* DeceitGameMiniView.swift */; };
 		BA6C09DD1EF0D98C0029B2E6 /* FriendsSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09D41EF0D98C0029B2E6 /* FriendsSceneController.swift */; };
 		BA6C09DE1EF0D98C0029B2E6 /* MessageSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09D61EF0D98C0029B2E6 /* MessageSceneController.swift */; };
 		BA6C09DF1EF0D98C0029B2E6 /* MineSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C09D81EF0D98C0029B2E6 /* MineSceneController.swift */; };
@@ -41,6 +42,7 @@
 		BA2772D31EEFB8EB00ABF5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA2772DB1EEFBB1D00ABF5B2 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
 		BA2916821EFB68D1007D819E /* GameHelperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelperController.swift; sourceTree = "<group>"; };
+		BA2916841EFB8A29007D819E /* DeceitGameMiniView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeceitGameMiniView.swift; sourceTree = "<group>"; };
 		BA6C09D41EF0D98C0029B2E6 /* FriendsSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsSceneController.swift; sourceTree = "<group>"; };
 		BA6C09D61EF0D98C0029B2E6 /* MessageSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSceneController.swift; sourceTree = "<group>"; };
 		BA6C09D81EF0D98C0029B2E6 /* MineSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineSceneController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				BA6C09DB1EF0D98C0029B2E6 /* GameEntriesView.swift */,
 				BA6C09DC1EF0D98C0029B2E6 /* PlaySceneController.swift */,
 				BA2916821EFB68D1007D819E /* GameHelperController.swift */,
+				BA2916841EFB8A29007D819E /* DeceitGameMiniView.swift */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				BA6C09F41EF146D50029B2E6 /* AddPersonScreen.swift in Sources */,
 				BA6C09DD1EF0D98C0029B2E6 /* FriendsSceneController.swift in Sources */,
 				BA6C09F01EF114100029B2E6 /* IonIconHelper.swift in Sources */,
+				BA2916851EFB8A29007D819E /* DeceitGameMiniView.swift in Sources */,
 				BA2772C71EEFB8EB00ABF5B2 /* ViewController.swift in Sources */,
 				BA6C09F21EF114550029B2E6 /* Ionicons.swift in Sources */,
 				BA6C09E01EF0D98C0029B2E6 /* DeceitGameView.swift in Sources */,

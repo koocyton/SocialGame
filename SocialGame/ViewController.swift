@@ -33,6 +33,7 @@ let centerViewY : CGFloat = statusBarHeight + navigationHeight;
 
 
 let deceitGameView : DeceitGameView = DeceitGameView()
+let miniDeceitGameView : DeceitGameMiniView = DeceitGameMiniView()
 
 class ViewController: UITabBarController {
 
@@ -69,7 +70,7 @@ class ViewController: UITabBarController {
         friendsScene.navigationBar.shadowImage = UIImage()
         friendsScene.navigationBar.isTranslucent = true
         friendsScene.navigationBar.alpha = 0.8
-        friendsScene.tabBarItem.title = "Friends";
+        friendsScene.tabBarItem.title = "Together";
         friendsScene.tabBarItem.image = UIImage.ionicon(with: .friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         friendsScene.tabBarItem.selectedImage = UIImage.ionicon(with: .selected_friend, textColor: UIColor.darkGray, size: CGSize(width: 28, height: 28))
         self.addChildViewController(friendsScene)

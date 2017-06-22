@@ -32,6 +32,8 @@ class PlaySceneController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false;
         
         self.addPlaySubView()
+
+        self.view.addSubview(miniDeceitGameView)
     }
     
     /* override var preferredStatusBarStyle : UIStatusBarStyle {

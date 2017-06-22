@@ -201,6 +201,7 @@ class DeceitGameView: UIView {
         }
         else {
             self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
+            miniDeceitGameView.slideOut()
             // self.diDong()
         }
     }
@@ -216,6 +217,7 @@ class DeceitGameView: UIView {
         }
         else {
             self.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
+            miniDeceitGameView.slideInto()
         }
     }
 
