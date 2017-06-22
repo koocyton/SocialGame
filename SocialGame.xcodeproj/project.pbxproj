@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1EAD621EFBD3EB00CF28B9 /* libChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1EAD5A1EFBC83300CF28B9 /* libChatSDK.a */; };
+		BA1EAD631EFBD3EC00CF28B9 /* libYayaSDKBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1EAD5B1EFBC83300CF28B9 /* libYayaSDKBase.a */; };
+		BA1EAD661EFBDCE200CF28B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1EAD651EFBDCE200CF28B9 /* Accelerate.framework */; };
+		BA1EAD681EFBDCE800CF28B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1EAD671EFBDCE800CF28B9 /* SystemConfiguration.framework */; };
+		BA1EAD6A1EFBDCF600CF28B9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1EAD691EFBDCF600CF28B9 /* CoreTelephony.framework */; };
 		BA2772C51EEFB8EB00ABF5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772C41EEFB8EB00ABF5B2 /* AppDelegate.swift */; };
 		BA2772C71EEFB8EB00ABF5B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2772C61EEFB8EB00ABF5B2 /* ViewController.swift */; };
 		BA2772CA1EEFB8EB00ABF5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2772C81EEFB8EB00ABF5B2 /* Main.storyboard */; };
@@ -32,6 +37,21 @@
 
 /* Begin PBXFileReference section */
 		A8AC049BE5AB7BFF3B535C36 /* Pods_SocialGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1EAD511EFBC83300CF28B9 /* MicModeChangeNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicModeChangeNotify.h; sourceTree = "<group>"; };
+		BA1EAD521EFBC83300CF28B9 /* RichMessageNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichMessageNotify.h; sourceTree = "<group>"; };
+		BA1EAD531EFBC83300CF28B9 /* TextMessageNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageNotify.h; sourceTree = "<group>"; };
+		BA1EAD541EFBC83300CF28B9 /* TroopsChangeNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroopsChangeNotify.h; sourceTree = "<group>"; };
+		BA1EAD551EFBC83300CF28B9 /* UserStateNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStateNotify.h; sourceTree = "<group>"; };
+		BA1EAD561EFBC83300CF28B9 /* VoiceMessageNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceMessageNotify.h; sourceTree = "<group>"; };
+		BA1EAD571EFBC83300CF28B9 /* YvAudioTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YvAudioTools.h; sourceTree = "<group>"; };
+		BA1EAD581EFBC83300CF28B9 /* YvChatManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YvChatManage.h; sourceTree = "<group>"; };
+		BA1EAD591EFBC83300CF28B9 /* YvRecognizerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YvRecognizerProtocol.h; sourceTree = "<group>"; };
+		BA1EAD5A1EFBC83300CF28B9 /* libChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChatSDK.a; sourceTree = "<group>"; };
+		BA1EAD5B1EFBC83300CF28B9 /* libYayaSDKBase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYayaSDKBase.a; sourceTree = "<group>"; };
+		BA1EAD641EFBD6F400CF28B9 /* SocialGame-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialGame-Swift.h"; sourceTree = "<group>"; };
+		BA1EAD651EFBDCE200CF28B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BA1EAD671EFBDCE800CF28B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BA1EAD691EFBDCF600CF28B9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BA2772C11EEFB8EB00ABF5B2 /* SocialGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2772C41EEFB8EB00ABF5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA2772C61EEFB8EB00ABF5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +82,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1EAD6A1EFBDCF600CF28B9 /* CoreTelephony.framework in Frameworks */,
+				BA1EAD681EFBDCE800CF28B9 /* SystemConfiguration.framework in Frameworks */,
+				BA1EAD661EFBDCE200CF28B9 /* Accelerate.framework in Frameworks */,
+				BA1EAD621EFBD3EB00CF28B9 /* libChatSDK.a in Frameworks */,
+				BA1EAD631EFBD3EC00CF28B9 /* libYayaSDKBase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,14 +96,53 @@
 		43D7C106DC183EB65E8B6DFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA1EAD691EFBDCF600CF28B9 /* CoreTelephony.framework */,
+				BA1EAD671EFBDCE800CF28B9 /* SystemConfiguration.framework */,
+				BA1EAD651EFBDCE200CF28B9 /* Accelerate.framework */,
 				A8AC049BE5AB7BFF3B535C36 /* Pods_SocialGame.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA1EAD4E1EFBC83300CF28B9 /* yayaSdk */ = {
+			isa = PBXGroup;
+			children = (
+				BA1EAD4F1EFBC83300CF28B9 /* include */,
+				BA1EAD5A1EFBC83300CF28B9 /* libChatSDK.a */,
+				BA1EAD5B1EFBC83300CF28B9 /* libYayaSDKBase.a */,
+			);
+			name = yayaSdk;
+			path = ../../yayaSdk;
+			sourceTree = "<group>";
+		};
+		BA1EAD4F1EFBC83300CF28B9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BA1EAD501EFBC83300CF28B9 /* Models */,
+				BA1EAD571EFBC83300CF28B9 /* YvAudioTools.h */,
+				BA1EAD581EFBC83300CF28B9 /* YvChatManage.h */,
+				BA1EAD591EFBC83300CF28B9 /* YvRecognizerProtocol.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		BA1EAD501EFBC83300CF28B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA1EAD511EFBC83300CF28B9 /* MicModeChangeNotify.h */,
+				BA1EAD521EFBC83300CF28B9 /* RichMessageNotify.h */,
+				BA1EAD531EFBC83300CF28B9 /* TextMessageNotify.h */,
+				BA1EAD541EFBC83300CF28B9 /* TroopsChangeNotify.h */,
+				BA1EAD551EFBC83300CF28B9 /* UserStateNotify.h */,
+				BA1EAD561EFBC83300CF28B9 /* VoiceMessageNotify.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BA2772B81EEFB8EA00ABF5B2 = {
 			isa = PBXGroup;
 			children = (
+				BA1EAD641EFBD6F400CF28B9 /* SocialGame-Swift.h */,
 				BA2772C31EEFB8EB00ABF5B2 /* SocialGame */,
 				BA2772C21EEFB8EB00ABF5B2 /* Products */,
 				43D7C106DC183EB65E8B6DFF /* Frameworks */,
@@ -96,6 +160,7 @@
 		BA2772C31EEFB8EB00ABF5B2 /* SocialGame */ = {
 			isa = PBXGroup;
 			children = (
+				BA1EAD4E1EFBC83300CF28B9 /* yayaSdk */,
 				BA6C09EB1EF113F50029B2E6 /* helper */,
 				BA6C09D21EF0D98C0029B2E6 /* scene */,
 				BA2772DB1EEFBB1D00ABF5B2 /* resource */,
@@ -394,8 +459,11 @@
 				DEVELOPMENT_TEAM = BX9G65C6W8;
 				INFOPLIST_FILE = SocialGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = /Developer/Project/yayaSdk;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doopp.ios.SocialGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialGame-Swift.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -407,8 +475,11 @@
 				DEVELOPMENT_TEAM = BX9G65C6W8;
 				INFOPLIST_FILE = SocialGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = /Developer/Project/yayaSdk;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doopp.ios.SocialGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialGame-Swift.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -39,6 +39,15 @@ class DeceitGameMiniView: UIView {
         fayan.backgroundColor = UIColor.clear
         fayan.frame = CGRect(x:60, y:15, width:100, height:30)
         self.addSubview(fayan)
+        
+        self.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        tapGesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    func tapGestureAction() {
+        deceitGameView.slideInto()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,12 +77,23 @@ class DeceitGameMiniView: UIView {
     }
     
     func slideInto() {
-        self.layer.position.y = screenHeight - 79
-        self.frame.origin.x = -1
+        if (self.frame.origin.y > screenHeight - 109) {
+            let y = self.frame.origin.y - 1
+            // print(y, self.layer.position.y, screenHeight)
+            let time: TimeInterval = 0.0003
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+                self.frame.origin.y = y
+                self.slideInto()
+            }
+        }
+        else {
+            self.frame.origin.y = screenHeight - 109
+            self.frame.origin.x = -1
+        }
     }
     
     func slideOut() {
-        self.layer.position.y = screenHeight
+        self.frame.origin.y = screenHeight
         self.frame.origin.x = -1
     }
 

@@ -12,7 +12,7 @@ import AVFoundation
 
 import MediaPlayer
 
-class DeceitGameView: UIView {
+class DeceitGameView: UIView {//, YvChatManageDelegate {
     
     var audioPlayer: AVAudioPlayer? = nil
     
@@ -203,6 +203,7 @@ class DeceitGameView: UIView {
             self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
             miniDeceitGameView.slideOut()
             // self.diDong()
+            //chatManager.loginBinding(withTT: "ttt", seq: "78765", hasVideo: false, position: 0, videoCount: 0)
         }
     }
     

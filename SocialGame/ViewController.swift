@@ -35,6 +35,8 @@ let centerViewY : CGFloat = statusBarHeight + navigationHeight;
 let deceitGameView : DeceitGameView = DeceitGameView()
 let miniDeceitGameView : DeceitGameMiniView = DeceitGameMiniView()
 
+let chatManager : YvChatManage = YvChatManage.sharedInstance()
+
 class ViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -102,7 +104,27 @@ class ViewController: UITabBarController {
         deceitGameView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
         self.view.addSubview(deceitGameView)
         // self.navigationController?.navigationBar.barStyle = .black
+        
+
+        //chatManager.setInitParam(with: kServerEnvironment.serverEnvironment_Release, appId: "1001352")
+        //chatManager.setLogLevel(0)
+        //chatManager.meteringEnabled = true
+        //chatManager.delegate = deceitGameView
     }
+    
+    
+    /*
+    
+     _chatManager = [YvChatManage sharedInstance];
+     //        [_chatManager SetInitParamWithAppId:__LRSYayaAudioManagerAppID istest:NO];
+     [_chatManager SetInitParamWithEnvironment:kServerEnvironment_InternationalRelease AppId:__LRSYayaAudioManagerAppID];
+     //        [_chatManager SetInitParamWithEnvironment:kServerEnvironment_Debug AppId:__LRSYayaAudioManagerAppID];
+     [_chatManager setLogLevel:0];
+     [_chatManager setMeteringEnabled:YES];
+     _chatManager.delegate = self;
+     _delegates = (LRSMultipleDelegate<LRSAudioManagerDelegate> *)[[LRSMultipleDelegate alloc] init];
+     
+    */
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
