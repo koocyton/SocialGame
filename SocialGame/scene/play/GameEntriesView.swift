@@ -24,15 +24,14 @@ class GameListView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         //注册一个cell
         self.register(GameCell.self, forCellWithReuseIdentifier:"GameCell")
         self.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"UICollectionViewCell")
-        
-        
+
         // self.addSubview(self.deceitGameView)
     }
     
     // 有多少个 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 5
+        return 3
     }
     
     // 点击 cell 的时候
@@ -77,6 +76,8 @@ class GameCell: UICollectionViewCell {
     
     var helpBtn = UIButton()
     
+    let helperController = GameHelperController()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -103,6 +104,7 @@ class GameCell: UICollectionViewCell {
         helpBtn.layer.cornerRadius = 4
         helpBtn.layer.borderWidth = 1
         helpBtn.layer.borderColor = UIColor.black.cgColor
+        helpBtn.addTarget(self, action:#selector(self.pushOpenHelper), for:.touchUpInside)
         self.addSubview(helpBtn)
         
         // 按钮
@@ -122,6 +124,32 @@ class GameCell: UICollectionViewCell {
         hrView.layer.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.8).cgColor
         self.addSubview(hrView)
     }
+    
+    func pushOpenHelper() {
+        // self.navigationController?.pushViewController(self.addPersonScreen, animated: true)
+        self.findNavigator().pushViewController(self.helperController, animated: true)
+        self.findController().tabBarController?.tabBar.isHidden = true;
+    }
+    
+    func findController() -> UIViewController! {
+        return self.findControllerWithClass(UIViewController.self)
+    }
+    
+    func findNavigator() -> UINavigationController! {
+        return self.findControllerWithClass(UINavigationController.self)
+    }
+    
+    func findControllerWithClass<T>(_ clzz: AnyClass) -> T? {
+        var responder = self.next
+        while(responder != nil) {
+            if (responder!.isKind(of: clzz)) {
+                return responder as? T
+            }
+            responder = responder?.next
+        }
+        return nil
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

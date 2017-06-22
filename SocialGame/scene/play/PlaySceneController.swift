@@ -29,7 +29,7 @@ class PlaySceneController: UIViewController {
 
         self.navigationItem.title = "游戏列表"
         self.view.backgroundColor = UIColor.white
-        // self.tabBarController?.tabBar.isHidden = false;
+        self.tabBarController?.tabBar.isHidden = false;
         
         self.addPlaySubView()
     }
