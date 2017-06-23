@@ -35,9 +35,10 @@ let centerViewY : CGFloat = statusBarHeight + navigationHeight;
 let deceitGameView : DeceitGameView = DeceitGameView()
 let miniDeceitGameView : DeceitGameMiniView = DeceitGameMiniView()
 
-let chatManager : YvChatManage = YvChatManage.sharedInstance()
+let _audioTools : YvAudioTools = YvAudioTools.init()
+let _chatManage : YvChatManage = YvChatManage.sharedInstance()
 
-class ViewController: UITabBarController {
+class ViewController: UITabBarController, YvChatManageDelegate, YvAudioToolsDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class ViewController: UITabBarController {
         //let blurEffect = UIBlurEffect(style: .regular)
         //let blurView = UIVisualEffectView(effect: blurEffect)
         //blurView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: audioPlayHeight)
-        
+
         // UI Play VIEW Controller
         let playScene = UINavigationController(rootViewController: PlaySceneController())
         // playScene.navigationBar.isHidden = true
@@ -106,15 +107,29 @@ class ViewController: UITabBarController {
         // self.navigationController?.navigationBar.barStyle = .black
         
 
-        //chatManager.setInitParam(with: kServerEnvironment.serverEnvironment_Release, appId: "1001352")
-        //chatManager.setLogLevel(0)
-        //chatManager.meteringEnabled = true
-        //chatManager.delegate = deceitGameView
+        // self.chatManage = YvChatManage.sharedInstance()
+        // self.chatManage?.setInitParam(withAppId: "1001352", istest: false)
+        
+        
+        _chatManage.setInitParam(with: kServerEnvironment.serverEnvironment_Release, appId: "1001352")
+        _chatManage.setLogLevel(0)
+        _chatManage.meteringEnabled = true
+        _chatManage.delegate = self
+        _chatManage.loginBinding(withTT: "ttt", seq: "lrs_110034", hasVideo: false, position: 0, videoCount: 0)
+        _chatManage.isAutoPlayVoiceMessage = true
+
+        _audioTools.delegate = self
     }
     
+    func chatManage(_ sender: YvChatManage!, loginResp result: Int32, msg: String!, yunvaid: UInt64) {
+        print("BaBa")
+    }
+    
+    func chatManage(_ sender: YvChatManage!, realTimeVoiceMessageNotifyWithYunvaId yunvaid: UInt32, chatroomId: String!, expand: String!) {
+        print("YaYa")
+    }
     
     /*
-    
      _chatManager = [YvChatManage sharedInstance];
      //        [_chatManager SetInitParamWithAppId:__LRSYayaAudioManagerAppID istest:NO];
      [_chatManager SetInitParamWithEnvironment:kServerEnvironment_InternationalRelease AppId:__LRSYayaAudioManagerAppID];
@@ -123,8 +138,14 @@ class ViewController: UITabBarController {
      [_chatManager setMeteringEnabled:YES];
      _chatManager.delegate = self;
      _delegates = (LRSMultipleDelegate<LRSAudioManagerDelegate> *)[[LRSMultipleDelegate alloc] init];
-     
     */
+    
+    //在线播放语音
+    func playOnlineAudio(voiceUrl: String)
+    {
+        let audioTools = YvAudioTools.init(delegate: self)
+        audioTools?.playOnlineAudio(voiceUrl)
+    }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent

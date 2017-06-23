@@ -12,7 +12,7 @@ import AVFoundation
 
 import MediaPlayer
 
-class DeceitGameView: UIView {//, YvChatManageDelegate {
+class DeceitGameView: UIView {
     
     var audioPlayer: AVAudioPlayer? = nil
     
@@ -101,6 +101,23 @@ class DeceitGameView: UIView {//, YvChatManageDelegate {
         
         // self.view.addSubview(self.gameScreen)
     }
+
+    
+    /*- (void)ChatManage:(YvChatManage *)sender RealTimeVoiceMessageNotifyWithYunvaId:(UInt32)yunvaid chatroomId:(NSString *)chatroomId expand:(NSString *)expand {
+    id<LRSPrimaryKey> userID = nil;
+    {
+    std::lock_guard<decltype(_lock)> lock(_lock);
+    auto result = _users.find(yunvaid);
+    if (result != _users.end()) {
+    userID = result->second;
+    }
+    }
+    float volume = [expand doubleValue];
+    [self.delegates audioManager:self userID:userID currentOutputVolume:volume];
+    }*/
+    
+    // -(void)ChatManage:(YvChatManage *)sender RealTimeVoiceMessageNotifyWithYunvaId:(UInt32)yunvaid chatroomId:(NSString *)chatroomId expand:(NSString *)expand
+
     
 
     /* 
@@ -203,7 +220,7 @@ class DeceitGameView: UIView {//, YvChatManageDelegate {
             self.frame = CGRect(x: 0, y: 20, width: screenWidth, height: screenHeight)
             miniDeceitGameView.slideOut()
             // self.diDong()
-            //chatManager.loginBinding(withTT: "ttt", seq: "78765", hasVideo: false, position: 0, videoCount: 0)
+            // YvChatManage.sharedInstance().loginBinding(withTT: "ttt", seq: "78765", hasVideo: false, position: 0, videoCount: 0)
         }
     }
     
